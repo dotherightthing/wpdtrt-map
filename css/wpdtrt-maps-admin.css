@@ -1,0 +1,18 @@
+/**
+ * Styles for the WP Admin plugin options page
+ *
+ * This file contains CSS.
+ *
+ * @link        https://github.com/dotherightthing/wpdtrt-maps
+ * @since       0.1.0
+ *
+ * @package     Wpdtrt_Maps
+ * @subpackage  Wpdtrt_Maps/views
+ */
+
+.wpdtrt-maps-tip {
+  display: block;
+  font-size: .85em;
+  padding-top: .2em;
+}
+

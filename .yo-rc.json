@@ -1,0 +1,24 @@
+{
+  "generator-wp-plugin-boilerplate": {
+    "name": "wpdtrt-maps",
+    "nameSafe": "wpdtrt_maps",
+    "nameFriendly": "DTRT Maps",
+    "nameFriendlySafe": "Wpdtrt_Maps",
+    "nameAdminMenu": "DTRT Maps",
+    "urlAdminMenu": "wpdtrt-maps",
+    "description": "Embed an interactive map",
+    "tags": "maps",
+    "homepage": "https://github.com/dotherightthing/wpdtrt-maps",
+    "license": "GPLv2 or later",
+    "licenseUrl": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "donateUrl": "http://dotherightthing.co.nz",
+    "wpVersion": "4.8.1",
+    "authorName": "Dan Smith",
+    "authorWordPressName": "dotherightthingnz",
+    "authorEmail": "dev@dotherightthing.co.nz",
+    "authorUrl": "http://dotherightthing.co.nz",
+    "repositoryType": "git",
+    "repositoryUrl": "git@github.com:dotherightthing/wpdtrt-maps.git",
+    "version": "0.1.0"
+  }
+}
