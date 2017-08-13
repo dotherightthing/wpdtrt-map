@@ -23,24 +23,16 @@ Embed an interactive map
 
 == Frequently Asked Questions ==
 
-= How do I specify a map location? =
-
-Add the ACF Google Map to the desired post types:
-
-1. Install and activate the Advanced Custom Fields plugin dependency
-2. Custom Fields > Add New
-3. Custom Fields > Add Field
-4. Type: `Google Map`
-5. Name: `wpdtrt_acf_page_map`
-
-Edit the post type:
-
-1. Select a map location
-2. Publish or Update the page
-
 = How do I embed a map? =
 
-Please use the provided shortcode to embed a map:
+A) Specify a map location:
+
+1. On a *Page*,
+2. Locate the *DTRT Maps* metabox
+3. Search for a location
+4. *Publish*/*Update*
+
+B) Use the provided shortcode to embed a map:
 
 ```
 <!-- within the editor -->
@@ -50,7 +42,7 @@ Please use the provided shortcode to embed a map:
 <?php echo do_shortcode( '[wpdtrt_maps option="value"]' ); ?>
 ```
 
-= Shortcode options =
+C) Shortcode options:
 
 1. `id="1"` - the map ID
 2. `link_text="View Larger Map"` - optionally display a link to the map at the bottom of the embed
