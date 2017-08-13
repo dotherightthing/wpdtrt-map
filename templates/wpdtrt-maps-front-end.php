@@ -19,7 +19,7 @@
 ?>
 
 <div class="wpdtrt-map">
-  <div id="wpdtrt-map-'<?php echo $id; ?>" class="wpdtrt-map-embed"></div>
+  <div id="wpdtrt-map-<?php echo $id; ?>" class="wpdtrt-map-embed"></div>
     <?php if ( $link_text !== '' ): ?>
     <p class="wpdtrt-map-link">
       <a href="//maps.google.com/maps/place/<?php echo $coordinates; ?>"><?php echo $link_text; ?></a>

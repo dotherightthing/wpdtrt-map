@@ -71,7 +71,7 @@ if ( ! function_exists('wpdtrt_map_js_leaflet') ) {
      * @see https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js
      * @see https://www.advancedcustomfields.com/resources/google-map/
      */
-    $acf_map = get_field('wpdtrt_acf_page_map');
+    $acf_map = get_field('wpdtrt_maps_acf_google_map');
 
     if ( ! $acf_map ) {
       return;

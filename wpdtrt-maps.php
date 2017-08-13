@@ -93,9 +93,8 @@ if( ! defined( 'WPDTRT_MAPS_URL' ) ) {
 
   require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-acf.php');
   require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-api.php');
-  require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-html.php');
   require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-css.php');
-  //require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-js.php');
+  require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-js.php');
   require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-options.php');
   require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-shortcode.php');
   //require_once(WPDTRT_MAPS_PATH . 'app/wpdtrt-maps-widget.php');

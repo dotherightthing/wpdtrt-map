@@ -35,9 +35,6 @@ if ( !function_exists( 'wpdtrt_maps_shortcode' ) ) {
     // the ACF location picker
     $acf_map = get_field('wpdtrt_maps_acf_google_map');
 
-    wpdtrt_log($acf_map);
-
-
     // if there is no location picker, then we can't display a map location
     if ( ! $acf_map ) {
       return;
