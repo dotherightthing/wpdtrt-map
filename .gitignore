@@ -3,8 +3,6 @@ generators
 logs
 node_modules
 tests
-vendor
-!vendor/index.php
-!vendor/tgm-plugin-activation
+vendor/bower_components
 composer.phar
 .DS_Store
