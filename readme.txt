@@ -44,8 +44,8 @@ B) Use the provided shortcode to embed a map:
 
 C) Shortcode options:
 
-1. `id="1"` - the map ID
-2. `link_text="View Larger Map"` - optionally display a link to the map at the bottom of the embed
+1. `id="1"` (default) - the map ID
+2. `link_text="View Larger Map"` (default) - optionally display a link to the map at the bottom of the embed
 
 == Changelog ==
 
