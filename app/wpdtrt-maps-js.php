@@ -32,12 +32,12 @@ if ( !function_exists( 'wpdtrt_maps_frontend_js' ) ) {
       true
     );
 
-    wp_localize_script( 'wpdtrt_maps_frontend_js',
-      'wpdtrt_maps_config',
-      array(
-        'ajax_url' => admin_url( 'admin-ajax.php' ) // wpdtrt_maps_config.ajax_url
-      )
-    );
+    //wp_localize_script( 'wpdtrt_maps_frontend_js',
+    //  'wpdtrt_maps_config',
+    //  array(
+    //    'ajax_url' => admin_url( 'admin-ajax.php' ) // wpdtrt_maps_config.ajax_url
+    //  )
+    //);
 
   }
 
