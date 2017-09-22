@@ -55,6 +55,7 @@ if ( !function_exists( 'wpdtrt_maps_frontend_js' ) ) {
  * @see https://www.w3.org/TR/SRI/
  * @see https://core.trac.wordpress.org/ticket/22249
  * @see https://www.advancedcustomfields.com/resources/google-map/
+ * @todo Can this resource be pulled without sending the SRI attributes, as jQuery also uses SRI now
  */
 
 if ( ! function_exists('wpdtrt_map_js_leaflet') ) {

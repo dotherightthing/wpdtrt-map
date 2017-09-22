@@ -47,6 +47,13 @@ function wpdtrt_maps_register_required_plugins() {
 	      'is_callable'   => array( 'acf_field_google_map', 'render_field' )
 	    ),
 
+	    array(
+	      	'name'          => 'WordPress Admin Style',
+	      	'slug'          => 'wordpress-admin-style',
+      		'source'        => 'https://github.com/bueltge/wordpress-admin-style/archive/master.zip',
+      		'external_url'  => 'https://github.com/bueltge/wordpress-admin-style',
+      		'required' 		=> false
+	    )
 	);
 
 	/*

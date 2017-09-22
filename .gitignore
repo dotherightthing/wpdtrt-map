@@ -3,6 +3,5 @@ generators
 logs
 node_modules
 tests
-vendor/bower_components
 composer.phar
 .DS_Store
