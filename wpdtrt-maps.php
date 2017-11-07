@@ -3,7 +3,7 @@
 Plugin Name:  DTRT Maps
 Plugin URI:   https://github.com/dotherightthing/wpdtrt-maps
 Description:  Embed an interactive map
-Version:      0.2.2
+Version:      0.2.4
 Author:       Dan Smith
 Author URI:   http://dotherightthing.co.nz
 License:      GPLv2 or later
