@@ -72,7 +72,7 @@ if ( ! function_exists('wpdtrt_map_css_leaflet') ) {
 
   function wpdtrt_map_css_leaflet() {
 
-    $acf_map = get_field('wpdtrt_acf_page_map');
+    $acf_map = get_field('wpdtrt_maps_acf_google_map');
 
     if ( ! $acf_map ) {
       return;
