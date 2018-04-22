@@ -1,17 +1,21 @@
 {
-  "name": "wpdtrt-maps",
-  "version": "0.2.4",
-  "description": "Embed an interactive map",
-  "main": "readme.txt",
+  "name": "wpdtrt-map",
+  "version": "0.3.0",
+  "description": "Embed an interactive map.",
+  "main": "wpdtrt-map.php",
   "authors": [
-    "Dan Smith <dev@dotherightthing.co.nz>"
+    {
+      "name": "Dan Smith",
+      "email": "dev@dotherightthing.co.nz"
+    }
   ],
-  "devDependencies": {},
+  "dependencies": {},
   "license": "All Rights Reserved",
-  "homepage": "https://github.com/dotherightthing/wpdtrt-maps",
+  "homepage": "https://github.com/dotherightthing/wpdtrt-map",
   "ignore": [
     "**/.*",
-    "bower_components"
+    "node_modules",
+    "vendor"
   ],
   "private": true
 }

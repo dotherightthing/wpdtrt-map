@@ -1,0 +1,37 @@
+//
+// Variables
+//
+// @link        https://github.com/dotherightthing/wpdtrt-map
+// @since       0.7.5
+//
+// @package     WPDTRT_Map
+//
+
+@import "vendor/dotherightthing/wpdtrt-plugin/node_modules/include-media/dist/_include-media";
+
+// -------------------------------------------------------------------
+// Breakpoints
+// -------------------------------------------------------------------
+
+// $breakpoints for include-media
+// 710+ wpdtrt-dbth 3 column layout
+// 910+ wpdtrt-dbth MENU button switches to an inline menu
+
+$breakpoints: (
+    phone: 320px,
+    phone_large: 400px,
+    tablet_small: 550px,
+    tablet: 710px,
+    desktop: 910px
+);
+
+// -------------------------------------------------------------------
+// Colors
+// -------------------------------------------------------------------
+
+$map-legend-bg-color: rgba(255, 255, 255, 1);
+$map-legend-text-color: rgba(0, 0, 0, 1);
+$map-leaflet-bar-border-color: rgba(0,0,0,.4);
+$map-leaflet-attribution-bg-color: rgba(255,255,255,.5);
+$map-link-bg-color: rgba(0,0,0,.7);
+$map-link-text-color: rgba(255, 255, 255, 1);

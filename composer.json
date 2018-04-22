@@ -1,0 +1,36 @@
+{
+	"name": "dotherightthing/wpdtrt-map",
+	"description": "Embed an interactive map.",
+	"type": "library",
+    "keywords": ["map"],
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Dan Smith",
+            "email": "dev@dotherightthing.co.nz",
+            "homepage": "https://github.com/dotherightthing/wpdtrt-map",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@dotherightthing.co.nz",
+        "issues": "https://github.com/dotherightthing/wpdtrt-map/issues"
+    },
+    "require": {
+        "dotherightthing/wpdtrt-plugin": "^1.0.0",
+        "advanced-custom-fields/advanced-custom-fields": "5.6.*"
+    },
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.com/dotherightthing/"
+        },
+        {
+            "packagist.org": false
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}

@@ -1,0 +1,108 @@
+/**
+ * Styles for the public front-end
+ *
+ * @package     WPDTRT_Map
+ * @version 	0.0.1
+ * @since       0.7.5
+ */
+
+@import "vendor/dotherightthing/wpdtrt-plugin/scss/_variables.scss";
+@import "vendor/dotherightthing/wpdtrt-plugin/scss/_extends.scss";
+
+// Note: Replicating Godaddy Website Builder implementation for Hands Of Light
+
+.wpdtrt-map {
+	position: relative; // AP for link
+	margin-top: 20px;
+}
+
+.wpdtrt-map-embed {
+	height: 500px;
+
+	// Custom Legend
+
+	.wpdtrt-map-legend {
+		background: $map-legend-bg-color;
+		color: $map-legend-text-color;
+		border: 1px solid;
+		line-height: initial;
+		padding: 5px;
+		margin: 0;
+	}
+
+	// Zoom controls
+
+	// add space below the control for the map link
+	// @see https://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
+	.leaflet-bottom.leaflet-left {
+		.leaflet-control-zoom {
+			bottom: 30px !important; // an extra 10px allows for the missing .mapbox-logo.leaflet-control
+		}
+	}
+
+	// allow for leaflet incorrectly applying touch styling in MacOS Chrome
+	&.leaflet-touch {
+
+		.leaflet-bar a {
+			font-size: 16px; // match Godaddy which uses mapbox icons instead
+			width: 26px; // match Godaddy
+			height: 26px; // match Godaddy
+			line-height: 23px; // vertically center		
+		}
+
+		.leaflet-control-layers,
+		.leaflet-bar {
+			border-width: 1px;
+			border-color: $map-leaflet-bar-border-color;
+			border-radius: 3px;
+		}
+	}
+
+	// Attributions
+
+	&.leaflet-container {
+
+		 .leaflet-control-attribution {
+	 		background-color: $map-leaflet-attribution-bg-color;
+			font-size: 12px;
+
+			a {
+				color: inherit;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.wpdtrt-map-link {
+	position: absolute;
+	bottom: 0;
+	z-index: 1001; // leaflet uses 400, leaflet-top and leaflet-bottom use 1000
+
+	a {
+		font-weight: normal;
+		font-style: normal;
+		line-height: 20px;
+
+		display: block;
+
+		height: 20px;
+		padding: 5px 10px;
+
+		vertical-align: middle;
+
+		color: $map-link-text-color;
+		background-color: $map-link-bg-color;
+	}
+}
+
+// -------------------------------------------------------------------
+// Media Queries
+// -------------------------------------------------------------------
+
+@include media("<=30em") {
+
+	.wpdtrt-map-link {
+		position: relative;
+	}
+}
