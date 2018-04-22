@@ -55,7 +55,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
         add_action( 'wp_head', [$this, 'render_css_head'] );
         add_action( 'wp_head', [$this, 'render_js_head'] );
         add_action( 'acf/init', [$this, 'set_acf_field_groups'] );
-        add_filter( 'acf/fields/google_map/api', [$this, 'get_acf_google_map_api_key'] );
+        add_filter( 'acf/fields/google_map/api', [$this, 'set_acf_google_map_api_key'] );
     }
 
     //// END WORDPRESS INTEGRATION \\\\
@@ -71,9 +71,9 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      * @see https://www.advancedcustomfields.com/resources/google-map/
      *
      * @example
-     *  add_filter('acf/fields/google_map/api', [$this, 'get_acf_google_map_api_key']);
+     *  add_filter('acf/fields/google_map/api', [$this, 'set_acf_google_map_api_key']);
      */
-    public function get_acf_google_map_api_key( $api ) {
+    public function set_acf_google_map_api_key( $api ) {
 
         $plugin_options = $this->get_plugin_options();
 
