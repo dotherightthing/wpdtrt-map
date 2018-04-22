@@ -52,11 +52,10 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
     	parent::wp_setup();
 
 		// add actions and filters here
-        add_action( 'wp_head', 'render_css_head' );
-        add_action( 'wp_head', 'render_js_head' );
+        add_action( 'wp_head', [$this, 'render_css_head'] );
+        add_action( 'wp_head', [$this, 'render_js_head'] );
+        add_action( 'acf/init', [$this, 'set_acf_field_groups'] );
         add_filter( 'acf/fields/google_map/api', [$this, 'get_acf_google_map_api_key'] );
-
-        $this->set_acf_field_groups();
     }
 
     //// END WORDPRESS INTEGRATION \\\\
@@ -89,51 +88,48 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      */
     public function set_acf_field_groups() {
 
-        if ( function_exists('acf_add_local_field_group') ) {
-
-            acf_add_local_field_group(array (
-                'key' => 'group_598fb16da2503',
-                'title' => 'DTRT Maps',
-                'fields' => array (
+        acf_add_local_field_group(array (
+            'key' => 'group_598fb16da2503',
+            'title' => 'DTRT Maps',
+            'fields' => array (
+                array (
+                    'key' => 'field_598fb1807c625',
+                    'label' => 'Map location',
+                    'name' => 'wpdtrt_map_acf_google_map',
+                    'type' => 'google_map',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array (
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'center_lat' => '',
+                    'center_lng' => '',
+                    'zoom' => 16,
+                    'height' => 500,
+                ),
+            ),
+            'location' => array (
+                array (
                     array (
-                        'key' => 'field_598fb1807c625',
-                        'label' => 'Map location',
-                        'name' => 'wpdtrt_map_acf_google_map',
-                        'type' => 'google_map',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array (
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'center_lat' => '',
-                        'center_lng' => '',
-                        'zoom' => 16,
-                        'height' => 500,
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'page',
                     ),
                 ),
-                'location' => array (
-                    array (
-                        array (
-                            'param' => 'post_type',
-                            'operator' => '==',
-                            'value' => 'page',
-                        ),
-                    ),
-                ),
-                'menu_order' => 0,
-                'position' => 'normal',
-                'style' => 'default',
-                'label_placement' => 'top',
-                'instruction_placement' => 'label',
-                'hide_on_screen' => '',
-                'active' => 1,
-                'description' => '',
-                )
-            );
-        }
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => 1,
+            'description' => '',
+            )
+        );
     }
 
     //// END SETTERS AND GETTERS \\\\
