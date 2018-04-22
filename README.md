@@ -11,3 +11,7 @@ Please read [DTRT WP Plugin: Setup and Maintenance](https://github.com/dotherigh
 ## WordPress Installation and Usage
 
 Please read the [WordPress readme.txt](readme.txt).
+
+## Dependencies
+
+1. The map location is selected using the free version of [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
