@@ -1,10 +1,9 @@
 //
 // Variables
 //
-// @link        https://github.com/dotherightthing/wpdtrt-map
-// @since       0.7.5
-//
 // @package     WPDTRT_Map
+// @version 	0.0.1
+// @since       0.7.6
 //
 
 @import "vendor/dotherightthing/wpdtrt-plugin/node_modules/include-media/dist/_include-media";
@@ -27,11 +26,12 @@ $breakpoints: (
 
 // -------------------------------------------------------------------
 // Colors
+// http://hex2rgba.devoth.com/
 // -------------------------------------------------------------------
 
-$map-legend-bg-color: rgba(255, 255, 255, 1);
-$map-legend-text-color: rgba(0, 0, 0, 1);
-$map-leaflet-bar-border-color: rgba(0,0,0,.4);
-$map-leaflet-attribution-bg-color: rgba(255,255,255,.5);
-$map-link-bg-color: rgba(0,0,0,.7);
-$map-link-text-color: rgba(255, 255, 255, 1);
+$wpdtrt-map-legend-bg-color: rgba(255, 255, 255, 1);
+$wpdtrt-map-legend-text-color: rgba(0, 0, 0, 1);
+$wpdtrt-map-leaflet-bar-border-color: rgba(0,0,0,.4);
+$wpdtrt-map-leaflet-attribution-bg-color: rgba(255,255,255,.5);
+$wpdtrt-map-link-bg-color: rgba(0,0,0,.7);
+$wpdtrt-map-link-text-color: rgba(255, 255, 255, 1);

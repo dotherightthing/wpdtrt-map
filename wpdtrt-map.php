@@ -215,7 +215,10 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
             'is_callable' => array( 'acf_field_google_map', 'render_field' )
           )
         ),
-        'demo_shortcode_params' => null
+        'demo_shortcode_params' => array(
+          'unique_id',
+          'enlargement_link_text'
+        )
       )
     );
   }
