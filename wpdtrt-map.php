@@ -208,6 +208,8 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
           'demo_shortcode_title' => __('Demo shortcode', 'wpdtrt-map'),
           'demo_data_description' => __('This demo was generated from the following data', 'wpdtrt-map'),
           'demo_date_last_updated' => __('Data last updated', 'wpdtrt-map'),
+          'demo_data_length' => __('results', 'wpdtrt-map'),
+          'demo_data_displayed_length' => __('results displayed', 'wpdtrt-map'),
         ),
         'plugin_options' => $plugin_options,
         'instance_options' => $instance_options,
