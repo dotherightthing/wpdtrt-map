@@ -1,7 +1,7 @@
 {
-	"name": "dotherightthing/wpdtrt-map",
-	"description": "Embed an interactive map.",
-	"type": "library",
+    "name": "dotherightthing/wpdtrt-map",
+    "description": "Embed an interactive map.",
+    "type": "library",
     "keywords": ["map"],
     "license": "ISC",
     "authors": [
