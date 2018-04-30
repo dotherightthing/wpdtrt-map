@@ -224,9 +224,9 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
           )
         ),
         'demo_shortcode_params' => array(
+          'name' => 'wpdtrt_map_shortcode',
           'unique_id' => 1,
-          'enlargement_link_text' => 'View larger version',
-          'number' => 1
+          'enlargement_link_text' => 'View larger version'
         )
       )
     );
