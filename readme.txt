@@ -29,7 +29,7 @@ Embed an interactive map.
 A) Specify a map location:
 
 1. On a *Page*,
-2. Locate the *DTRT Maps* metabox
+2. Locate the *DTRT Map* metabox
 3. Search for a location
 4. *Publish*/*Update*
 
@@ -37,16 +37,16 @@ B) Use the provided shortcode to embed a map:
 
 ```
 <!-- within the editor -->
-[wpdtrt_maps option="value"]
+[wpdtrt_map_shortcode option="value"]
 
 // in a PHP template, as a template tag
-<?php echo do_shortcode( '[wpdtrt_maps option="value"]' ); ?>
+<?php echo do_shortcode( '[wpdtrt_map_shortcode option="value"]' ); ?>
 ```
 
 C) Shortcode options:
 
-1. `id="1"` (default) - the map ID
-2. `link_text="View Larger Map"` (default) - optionally display a link to the map at the bottom of the embed
+1. `unique_id="1"` (default) - a unique ID to prevent embed conflicts
+2. `enlargement_link_text="View Larger Map"` (default) - optionally display a link to the map at the bottom of the embed
 
 == Screenshots ==
 
@@ -57,11 +57,54 @@ C) Shortcode options:
 
 = 0.3.0 =
 * Migrate to wpdtrt-plugin format
+* Output demo map shortcode on settings page
+* Make $acf_map retrieval DRY, support mocked shortcode data
+* Move dynamic Leaflet embed code into the shortcode template
+* Update Leaflet from 1.2.0 to 1.3.1
+* Add help text to Unique ID field
+* Use shortcode name in demo shortcode
+* Fix missing map embed ID
+* Fix Google Maps API key type
+* Output a warning instead of the map, if the Mapbox API token has not been set
+* Fix name of ACF map field
+* Retrieve value when using an option
+* Fix bad plugin name in translation context
+* Fix missing variables in map template
+* Use password fields rather than text fields
+* Migrate Bower & NPM to Yarn 
+* Update Node from 6.11.2 to 8.11.1 
+* Add messages required by shortcode demo 
+* Add SCSS partials for project-specific extends and variables 
+* Document dependencies
+* Use ACF action to load field config
+* Use latest beta version of ACF 5
+* Regenerate ACF field groups
+* Change tag badge to release badge
+* Update wpdtrt-plugin to 1.3.2
 
-= 0.0.1 =
+= 0.2.4 =
+* Bump version
+
+= 0.2.3 =
+* Fix name of ACF field, to resolve missing Leaflet stylesheet
+* Fold bower_components into vendor folder
+* Commit dependencies
+
+= 0.2.2 =
+* Update the plugin version
+
+= 0.2.1 =
+* Commit TGM files
+
+= 0.2.0 =
+* Remove redundant localization
+* Reduce width of map link, to reveal copyright information
+* Stack map link below map on mobile, to reveal copyright information
+
+= 0.1.0 =
 * Initial version
 
 == Upgrade Notice ==
 
-= 0.0.1 =
+= 0.1.0 =
 * Initial release
