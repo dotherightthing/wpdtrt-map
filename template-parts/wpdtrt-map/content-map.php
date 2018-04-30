@@ -19,7 +19,6 @@ $after_widget = null; // register_sidebar
 
 // shortcode options
 $enlargement_link_text = null;
-$unique_id = null;
 
 // access to plugin
 $plugin = null;
@@ -33,6 +32,9 @@ extract( $options, EXTR_IF_EXISTS );
 
 $acf_map = get_field('wpdtrt_map_acf_google_map_location');
 $coordinates = $acf_map['lat'] . ',' . $acf_map['lng'];
+
+// https://github.com/dotherightthing/wpdtrt-map/issues/5
+$unique_id = 1;
 
 // load the data
 // $plugin->get_api_data();

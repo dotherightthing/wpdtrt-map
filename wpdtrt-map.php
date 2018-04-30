@@ -173,12 +173,6 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
      * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-text.php
      */
     $instance_options = array(
-      'unique_id' => array(
-        'type' => 'number',
-        'size' => 3,
-        'label' => __('Unique ID', 'wpdtrt-map'),
-        'tip' => __('To prevent conflicts between maps on the same page', 'wpdtrt-map')
-      ),
       'enlargement_link_text' => array(
         'type' => 'text',
         'size' => 30,
@@ -226,7 +220,6 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
         ),
         'demo_shortcode_params' => array(
           'name' => 'wpdtrt_map_shortcode',
-          'unique_id' => 1,
           'enlargement_link_text' => 'View larger version'
         )
       )
@@ -263,7 +256,6 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
         'plugin' => $wpdtrt_map_plugin,
         'template' => 'map',
         'selected_instance_options' => array(
-          'unique_id',
           'enlargement_link_text'
         )
       )
@@ -287,7 +279,6 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
         'plugin' => $wpdtrt_map_plugin,
         'template' => 'map',
         'selected_instance_options' => array(
-          'unique_id',
           'enlargement_link_text'
         )
       )

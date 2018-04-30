@@ -222,7 +222,9 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
         $address = $acf_map['address'];
 
         // @todo https://github.com/dotherightthing/wpdtrt-map/issues/4
-        $map_container_id = 'wpdtrt-map-1';
+        $unique_id = 1;
+        $map_variable_id = 'wpdtrt_map_' . $unique_id;
+        $map_container_id = 'wpdtrt-map-' . $unique_id;
 
         if ( isset( $mapbox_api_token ) && ( $mapbox_api_token !== '' ) ) {
             // "Include Leaflet JavaScript file after Leaflet’s CSS"
@@ -233,14 +235,14 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
             $script .= '>';
             $script .= '</script>';
             $script .= '<script>';
-            $script .= 'var mymap = L.map("' . $map_container_id . '", { zoomControl: false }).setView([' . $coordinates . '], 16);';
+            $script .= 'var ' . $map_variable_id . ' = L.map("' . $map_container_id . '", { zoomControl: false }).setView([' . $coordinates . '], 16);';
             $script .= 'L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {';
             $script .= 'attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",';
             //$script .= 'maxZoom: 18,';
             $script .= 'id: "mapbox.streets",';
             $script .= 'accessToken: "' . $mapbox_api_token . '"';
-            $script .= '}).addTo(mymap);';
-            $script .= 'var marker = L.marker([' . $coordinates . ']).addTo(mymap);';
+            $script .= '}).addTo(' . $map_variable_id . ');';
+            $script .= 'var marker = L.marker([' . $coordinates . ']).addTo(' . $map_variable_id . ');';
             // http://leafletjs.com/examples/choropleth/
             $script .= 'var legend = L.control({ position: "topleft" });';
             $script .= 'legend.onAdd = function (map) {';
@@ -249,9 +251,9 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
               $script .= 'div.innerHTML = "' . $address . '";';
               $script .= 'return div;';
               $script .= '};';
-              $script .= 'legend.addTo(mymap);';
+              $script .= 'legend.addTo(' . $map_variable_id . ');';
             // https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/
-            $script .= 'new L.Control.Zoom({ position: "bottomleft" }).addTo(mymap);';
+            $script .= 'new L.Control.Zoom({ position: "bottomleft" }).addTo(' . $map_variable_id . ');';
             $script .= '</script>';
         }
         else {
