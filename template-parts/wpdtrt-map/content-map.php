@@ -41,7 +41,7 @@ $plugin_options = $plugin->get_plugin_options();
  * @see https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js
  * @see https://www.advancedcustomfields.com/resources/google-map/
  */
-$acf_map = get_field('wpdtrt_map_acf_google_map_location');
+$acf_map = $plugin->get_acf_map();
 
 if ( $acf_map ) {
 	$address = $acf_map['address'];

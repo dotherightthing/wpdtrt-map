@@ -227,7 +227,13 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
         'demo_shortcode_params' => array(
           'name' => 'wpdtrt_map_shortcode',
           'unique_id' => 1,
-          'enlargement_link_text' => 'View larger version'
+          'enlargement_link_text' => 'View larger version',
+          'number' => 1,
+          'mock_acf_map' => array(
+            'address' => __('Seatoun School & Community Emergency Hub Burnham Street, Seatoun, Wellington, New Zealand', 'wpdtrt-map'),
+            'lat' => '-41.3264776',
+            'lng' => '174.83712689999993'
+          )
         )
       )
     );

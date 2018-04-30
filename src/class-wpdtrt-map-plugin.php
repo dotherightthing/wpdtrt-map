@@ -63,6 +63,38 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
     //// START SETTERS AND GETTERS \\\\
 
     /**
+     * Get the real acf_map field, or the mock_acf_map for the settings page
+     *
+     * @return $acf_map
+     *
+     * @todo limit output to settings page (https://github.com/dotherightthing/wpdtrt-plugin/issues/91)
+     */
+    public function get_acf_map() {
+
+        // the map location is 'picked' using the ACF Map field
+        $acf_map = get_field('wpdtrt_map_acf_google_map_location');
+
+        // it can also be mocked using the demo_shortcode_params
+        $demo_shortcode_options = $this->get_demo_shortcode_params();
+
+        // real map embed on any page
+        if ( ! $acf_map ) {
+            // shortcode demo on options page
+            if ( is_admin() && array_key_exists('mock_acf_map', $demo_shortcode_options) ) {
+                $mock_acf_map = $demo_shortcode_options['mock_acf_map'];
+                $address = $mock_acf_map['address'];
+                $coordinates = $mock_acf_map['lat'] . ',' . $mock_acf_map['lng'];
+
+                if ( isset( $address ) && isset( $coordinates ) ) {
+                    $acf_map = $mock_acf_map;
+                }
+            }
+        }
+
+        return $acf_map;
+    }
+
+    /**
      * Register API key with ACF renderer
      *
      * @param $api
@@ -162,7 +194,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      */
     public function render_css_head() {
 
-        $acf_map = get_field('wpdtrt_map_acf_google_map_location');
+        $acf_map = $this->get_acf_map();
 
         if ( ! $acf_map ) {
             return;
@@ -195,8 +227,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      */
     public function render_js_head() {
 
-        // the map location is 'picked' using the ACF Map field
-        $acf_map = get_field('wpdtrt_map_acf_google_map_location');
+        $acf_map = $this->get_acf_map();
 
         if ( ! $acf_map ) {
             return;
