@@ -219,6 +219,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
         $coordinates = $acf_map['lat'] . ', ' . $acf_map['lng'];
         $address = $acf_map['address'];
+        // @todo https://github.com/dotherightthing/wpdtrt-map/issues/4
         $map_container_id = 'wpdtrt-map-1';
 
         if ( isset( $mapbox_api_token ) && ( $mapbox_api_token !== '' ) ) {

@@ -19,6 +19,7 @@ $after_widget = null; // register_sidebar
 
 // shortcode options
 $enlargement_link_text = null;
+$unique_id = null;
 
 // access to plugin
 $plugin = null;
@@ -43,7 +44,7 @@ echo $before_title . $title . $after_title;
 ?>
 
 <div class="wpdtrt-map">
-	<div id="wpdtrt-map-<?php echo $id; ?>" class="wpdtrt-map-embed"></div>
+	<div id="wpdtrt-map-<?php echo $unique_id; ?>" class="wpdtrt-map-embed"></div>
 		<?php if ( $enlargement_link_text !== '' ): ?>
 		<p class="wpdtrt-map-link">
 	  		<a href="//maps.google.com/maps/place/<?php echo $coordinates; ?>"><?php echo $enlargement_link_text; ?></a>
