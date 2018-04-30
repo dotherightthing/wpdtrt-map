@@ -31,8 +31,8 @@ $options = get_query_var( 'options' );
 // @link http://kb.network.dan/php/wordpress/extract/
 extract( $options, EXTR_IF_EXISTS );
 
-$acf_map = get_field('wpdtrt_maps_acf_google_map');
-$coordinates = $acf_map['lat'] . ', ' . $acf_map['lng'];
+$acf_map = get_field('wpdtrt_map_acf_google_map_location');
+$coordinates = $acf_map['lat'] . ',' . $acf_map['lng'];
 
 // load the data
 // $plugin->get_api_data();
