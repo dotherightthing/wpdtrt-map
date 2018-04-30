@@ -148,11 +148,11 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
      */
     $plugin_options = array(
       // Google Maps is used to render the ACF location picker
-      'google_static_maps_api_key' => array(
+      'google_javascript_maps_api_key' => array(
         'type' => 'password',
-        'label' => __('Google Static Maps API Key', 'wpdtrt-map'),
+        'label' => __('Google JavaScript Maps API Key', 'wpdtrt-map'),
         'size' => 50,
-        'tip' => __('https://developers.google.com/maps/documentation/static-maps/ > GET A KEY', 'wpdtrt-map')
+        'tip' => __('https://developers.google.com/maps/documentation/javascript/get-api-key', 'wpdtrt-map')
       ),
       // Mapbox is used to render the map embed
       'mapbox_api_token' => array(
