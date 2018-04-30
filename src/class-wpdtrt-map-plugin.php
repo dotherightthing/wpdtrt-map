@@ -195,6 +195,8 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      */
     public function render_js_head() {
 
+        global $wpdtrt_map_plugin;
+
         /**
          * ACF's Google Map field type supports geocoding
          * so entering an address there will generate
@@ -212,39 +214,50 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
         // https://www.mapbox.com/studio/account/tokens/
         $mapbox_api_token = $plugin_options['mapbox_api_token']['value'];
+        $messages = $wpdtrt_map_plugin->get_messages();
+        $mapbox_api_token_warning = $messages['mapbox_api_token_warning'];
 
         $coordinates = $acf_map['lat'] . ', ' . $acf_map['lng'];
         $address = $acf_map['address'];
+        $map_container_id = 'wpdtrt-map-1';
 
-        // "Include Leaflet JavaScript file after Leaflet’s CSS"
-        $script = '';
-        $script .= '<script';
-        $script .= ' src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"';
-        $script .= ' integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="';
-        $script .= ' crossorigin=""';
-        $script .= '>';
-        $script .= '</script>';
-        $script .= '<script>';
-        $script .= 'var mymap = L.map("wpdtrt-map-1", { zoomControl: false }).setView([' . $coordinates . '], 16);';
-        $script .= 'L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {';
-        $script .= 'attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",';
-        //$script .= 'maxZoom: 18,';
-        $script .= 'id: "mapbox.streets",';
-        $script .= 'accessToken: "' . $mapbox_api_token . '"';
-        $script .= '}).addTo(mymap);';
-        $script .= 'var marker = L.marker([' . $coordinates . ']).addTo(mymap);';
-        // http://leafletjs.com/examples/choropleth/
-        $script .= 'var legend = L.control({ position: "topleft" });';
-        $script .= 'legend.onAdd = function (map) {';
-        // tagname:div, classname:info legend
-          $script .= 'var div = L.DomUtil.create("div", "wpdtrt-map-legend");';
-          $script .= 'div.innerHTML = "' . $address . '";';
-          $script .= 'return div;';
-          $script .= '};';
-          $script .= 'legend.addTo(mymap);';
-        // https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/
-        $script .= 'new L.Control.Zoom({ position: "bottomleft" }).addTo(mymap);';
-        $script .= '</script>';
+        if ( isset( $mapbox_api_token ) && ( $mapbox_api_token !== '' ) ) {
+            // "Include Leaflet JavaScript file after Leaflet’s CSS"
+            $script .= '<script';
+            $script .= ' src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"';
+            $script .= ' integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="';
+            $script .= ' crossorigin=""';
+            $script .= '>';
+            $script .= '</script>';
+            $script .= '<script>';
+            $script .= 'var mymap = L.map("' . $map_container_id . '", { zoomControl: false }).setView([' . $coordinates . '], 16);';
+            $script .= 'L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {';
+            $script .= 'attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",';
+            //$script .= 'maxZoom: 18,';
+            $script .= 'id: "mapbox.streets",';
+            $script .= 'accessToken: "' . $mapbox_api_token . '"';
+            $script .= '}).addTo(mymap);';
+            $script .= 'var marker = L.marker([' . $coordinates . ']).addTo(mymap);';
+            // http://leafletjs.com/examples/choropleth/
+            $script .= 'var legend = L.control({ position: "topleft" });';
+            $script .= 'legend.onAdd = function (map) {';
+            // tagname:div, classname:info legend
+              $script .= 'var div = L.DomUtil.create("div", "wpdtrt-map-legend");';
+              $script .= 'div.innerHTML = "' . $address . '";';
+              $script .= 'return div;';
+              $script .= '};';
+              $script .= 'legend.addTo(mymap);';
+            // https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/
+            $script .= 'new L.Control.Zoom({ position: "bottomleft" }).addTo(mymap);';
+            $script .= '</script>';
+        }
+        else {
+            $script .= '<script>';
+            $script .= 'jQuery(window).on("load", function() {';
+            $script .= 'jQuery(".wpdtrt-map-embed").append("<p>' . $mapbox_api_token_warning . '</p>");';
+            $script .= '});';
+            $script .= '</script>';
+        }
 
         echo $script;
     }

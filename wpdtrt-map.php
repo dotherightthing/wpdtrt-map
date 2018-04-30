@@ -210,6 +210,7 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
           'demo_date_last_updated' => __('Data last updated', 'wpdtrt-map'),
           'demo_data_length' => __('results', 'wpdtrt-map'),
           'demo_data_displayed_length' => __('results displayed', 'wpdtrt-map'),
+          'mapbox_api_token_warning' => __('Please set Mapbox API Token in Settings > Map.', 'wpdtrt-map')
         ),
         'plugin_options' => $plugin_options,
         'instance_options' => $instance_options,
