@@ -18,7 +18,7 @@ $after_title = null; // register_sidebar
 $after_widget = null; // register_sidebar
 
 // shortcode options
-// $foo = null;
+$enlargement_link_text = null;
 
 // access to plugin
 $plugin = null;
@@ -29,6 +29,9 @@ $options = get_query_var( 'options' );
 // Overwrite variables from array values
 // @link http://kb.network.dan/php/wordpress/extract/
 extract( $options, EXTR_IF_EXISTS );
+
+$acf_map = get_field('wpdtrt_maps_acf_google_map');
+$coordinates = $acf_map['lat'] . ', ' . $acf_map['lng'];
 
 // load the data
 // $plugin->get_api_data();
@@ -41,9 +44,9 @@ echo $before_title . $title . $after_title;
 
 <div class="wpdtrt-map">
 	<div id="wpdtrt-map-<?php echo $id; ?>" class="wpdtrt-map-embed"></div>
-		<?php if ( $link_text !== '' ): ?>
+		<?php if ( $enlargement_link_text !== '' ): ?>
 		<p class="wpdtrt-map-link">
-	  		<a href="//maps.google.com/maps/place/<?php echo $coordinates; ?>"><?php echo $link_text; ?></a>
+	  		<a href="//maps.google.com/maps/place/<?php echo $coordinates; ?>"><?php echo $enlargement_link_text; ?></a>
 		</p>
 		<?php endif; ?>
 	</div>
