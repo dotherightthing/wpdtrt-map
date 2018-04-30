@@ -77,7 +77,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
         $plugin_options = $this->get_plugin_options();
 
-        $api['key'] = $plugin_options['google_static_maps_api_key'];
+        $api['key'] = $plugin_options['google_javascript_maps_api_key']['value'];
 
         return $api;
     }
@@ -211,7 +211,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
         $plugin_options = $this->get_plugin_options();
 
         // https://www.mapbox.com/studio/account/tokens/
-        $mapbox_api_token = $plugin_options['mapbox_api_token'];
+        $mapbox_api_token = $plugin_options['mapbox_api_token']['value'];
 
         $coordinates = $acf_map['lat'] . ', ' . $acf_map['lng'];
         $address = $acf_map['address'];
