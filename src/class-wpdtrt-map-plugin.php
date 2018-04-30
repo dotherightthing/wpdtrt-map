@@ -195,16 +195,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      */
     public function render_js_head() {
 
-        global $wpdtrt_map_plugin;
-
-        /**
-         * ACF's Google Map field type supports geocoding
-         * so entering an address there will generate
-         * latitide and longitude
-         *
-         * @see https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js
-         * @see https://www.advancedcustomfields.com/resources/google-map/
-         */
+        // the map location is 'picked' using the ACF Map field
         $acf_map = get_field('wpdtrt_map_acf_google_map_location');
 
         if ( ! $acf_map ) {
@@ -212,48 +203,22 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
         }
 
         $plugin_options = $this->get_plugin_options();
+        $messages = $this->get_messages();
 
         // https://www.mapbox.com/studio/account/tokens/
         $mapbox_api_token = $plugin_options['mapbox_api_token']['value'];
-        $messages = $wpdtrt_map_plugin->get_messages();
         $mapbox_api_token_warning = $messages['mapbox_api_token_warning'];
-
-        $coordinates = $acf_map['lat'] . ', ' . $acf_map['lng'];
-        $address = $acf_map['address'];
-
-        // @todo https://github.com/dotherightthing/wpdtrt-map/issues/4
-        $unique_id = 1;
-        $map_variable_id = 'wpdtrt_map_' . $unique_id;
-        $map_container_id = 'wpdtrt-map-' . $unique_id;
+        $script = '';
 
         if ( isset( $mapbox_api_token ) && ( $mapbox_api_token !== '' ) ) {
             // "Include Leaflet JavaScript file after Leaflet’s CSS"
+            // Note: actual embed code is in shortcode template content-map.php
+
             $script .= '<script';
             $script .= ' src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"';
             $script .= ' integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="';
             $script .= ' crossorigin=""';
             $script .= '>';
-            $script .= '</script>';
-            $script .= '<script>';
-            $script .= 'var ' . $map_variable_id . ' = L.map("' . $map_container_id . '", { zoomControl: false }).setView([' . $coordinates . '], 16);';
-            $script .= 'L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {';
-            $script .= 'attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",';
-            //$script .= 'maxZoom: 18,';
-            $script .= 'id: "mapbox.streets",';
-            $script .= 'accessToken: "' . $mapbox_api_token . '"';
-            $script .= '}).addTo(' . $map_variable_id . ');';
-            $script .= 'var marker = L.marker([' . $coordinates . ']).addTo(' . $map_variable_id . ');';
-            // http://leafletjs.com/examples/choropleth/
-            $script .= 'var legend = L.control({ position: "topleft" });';
-            $script .= 'legend.onAdd = function (map) {';
-            // tagname:div, classname:info legend
-              $script .= 'var div = L.DomUtil.create("div", "wpdtrt-map-legend");';
-              $script .= 'div.innerHTML = "' . $address . '";';
-              $script .= 'return div;';
-              $script .= '};';
-              $script .= 'legend.addTo(' . $map_variable_id . ');';
-            // https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/
-            $script .= 'new L.Control.Zoom({ position: "bottomleft" }).addTo(' . $map_variable_id . ');';
             $script .= '</script>';
         }
         else {
