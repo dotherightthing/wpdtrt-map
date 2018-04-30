@@ -202,7 +202,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
          * @see https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js
          * @see https://www.advancedcustomfields.com/resources/google-map/
          */
-        $acf_map = get_field('wpdtrt_maps_acf_google_map');
+        $acf_map = get_field('wpdtrt_map_acf_google_map_location');
 
         if ( ! $acf_map ) {
             return;
