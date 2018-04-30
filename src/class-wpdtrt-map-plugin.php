@@ -201,6 +201,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
          * ACF's Google Map field type supports geocoding
          * so entering an address there will generate
          * latitide and longitude
+         *
          * @see https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js
          * @see https://www.advancedcustomfields.com/resources/google-map/
          */
@@ -219,6 +220,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
         $coordinates = $acf_map['lat'] . ', ' . $acf_map['lng'];
         $address = $acf_map['address'];
+
         // @todo https://github.com/dotherightthing/wpdtrt-map/issues/4
         $map_container_id = 'wpdtrt-map-1';
 
