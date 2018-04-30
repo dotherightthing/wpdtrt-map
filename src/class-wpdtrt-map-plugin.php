@@ -172,8 +172,8 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
         $style = '';
         $style .= '<link';
         $style .= ' rel="stylesheet"';
-        $style .= ' href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"';
-        $style .= ' integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="';
+        $style .= ' href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"';
+        $style .= ' integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="';
         $style .= ' crossorigin=""';
         //$style .= ' ver=""';
         $style .= ' />';
@@ -229,8 +229,8 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
         if ( isset( $mapbox_api_token ) && ( $mapbox_api_token !== '' ) ) {
             // "Include Leaflet JavaScript file after Leaflet’s CSS"
             $script .= '<script';
-            $script .= ' src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"';
-            $script .= ' integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="';
+            $script .= ' src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"';
+            $script .= ' integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="';
             $script .= ' crossorigin=""';
             $script .= '>';
             $script .= '</script>';
