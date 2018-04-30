@@ -223,8 +223,9 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
           )
         ),
         'demo_shortcode_params' => array(
-          'unique_id',
-          'enlargement_link_text'
+          'unique_id' => 1,
+          'enlargement_link_text' => 'View larger version',
+          'number' => 1
         )
       )
     );
