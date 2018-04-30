@@ -150,16 +150,16 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
       // Google Maps is used to render the ACF location picker
       'google_static_maps_api_key' => array(
         'type' => 'password',
-        'label' => __('Google Static Maps API Key', 'wpdtrt-exif'),
+        'label' => __('Google Static Maps API Key', 'wpdtrt-map'),
         'size' => 50,
-        'tip' => __('https://developers.google.com/maps/documentation/static-maps/ > GET A KEY', 'wpdtrt-exif')
+        'tip' => __('https://developers.google.com/maps/documentation/static-maps/ > GET A KEY', 'wpdtrt-map')
       ),
       // Mapbox is used to render the map embed
       'mapbox_api_token' => array(
         'type' => 'password',
-        'label' => __('Mapbox API Token', 'wpdtrt-exif'),
+        'label' => __('Mapbox API Token', 'wpdtrt-map'),
         'size' => 120,
-        'tip' => __('https://www.mapbox.com/studio/account/tokens/', 'wpdtrt-exif')
+        'tip' => __('https://www.mapbox.com/studio/account/tokens/', 'wpdtrt-map')
       )
     );
 
