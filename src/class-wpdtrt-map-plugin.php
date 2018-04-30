@@ -54,6 +54,8 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 		// add actions and filters here
         add_action( 'wp_head', [$this, 'render_css_head'] );
         add_action( 'wp_head', [$this, 'render_js_head'] );
+        add_action( 'admin_head', [$this, 'render_css_head'] );
+        add_action( 'admin_head', [$this, 'render_js_head'] );
         add_action( 'acf/init', [$this, 'set_acf_field_groups'] );
         add_filter( 'acf/fields/google_map/api', [$this, 'set_acf_google_map_api_key'] );
     }

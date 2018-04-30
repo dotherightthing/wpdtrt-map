@@ -12,8 +12,17 @@
 @import "variables";
 @import "extends";
 
+// duplicate frontend styles for settings page demo
+@import "frontend";
+
 .wpdtrt-maps-tip {
 	display: block;
 	font-size: .85em;
 	padding-top: .2em;
+}
+
+.settings_page_wpdtrt-map {
+	.wpdtrt-map {
+		width: 500px
+	}
 }
