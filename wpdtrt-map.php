@@ -177,6 +177,7 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
         'type' => 'number',
         'size' => 3,
         'label' => __('Unique ID', 'wpdtrt-map'),
+        'tip' => __('To prevent conflicts between maps on the same page', 'wpdtrt-map')
       ),
       'enlargement_link_text' => array(
         'type' => 'text',
