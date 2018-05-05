@@ -8,7 +8,7 @@
  *    gulp dist --gulpfile ./vendor/dotherightthing/wpdtrt-plugin/gulpfile.js --cwd ./
  *
  * @package     WPDTRT_Map
- * @version 	0.3.0
+ * @version 	0.3.1
  * @since       0.7.5
  */
  
