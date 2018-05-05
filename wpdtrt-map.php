@@ -193,6 +193,7 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
         'prefix' => 'wpdtrt_map',
         'slug' => 'wpdtrt-map',
         'menu_title' => __('Map', 'wpdtrt-map'),
+        'settings_title' => __('Settings', 'wpdtrt-map'),
         'developer_prefix' => '',
         'path' => WPDTRT_MAP_PATH,
         'messages' => array(
