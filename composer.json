@@ -17,8 +17,7 @@
         "issues": "https://github.com/dotherightthing/wpdtrt-map/issues"
     },
     "require": {
-        "dotherightthing/wpdtrt-plugin": "^1.0.0",
-        "advanced-custom-fields/advanced-custom-fields": "5.6.*"
+        "dotherightthing/wpdtrt-plugin": "^1.0.0"
     },
     "minimum-stability": "stable",
     "repositories": [
@@ -32,5 +31,8 @@
     ],
     "config": {
         "vendor-dir": "vendor"
+    },
+    "require-dev": {
+        "advanced-custom-fields/advanced-custom-fields": "5.6.*"
     }
 }
