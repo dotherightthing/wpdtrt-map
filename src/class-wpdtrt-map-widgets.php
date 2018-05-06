@@ -16,6 +16,6 @@
  *
  * @param array $options Plugin options required by Widget
  */
-class WPDTRT_Map_Widget extends DoTheRightThing\WPPlugin\Widget{};
+class WPDTRT_Map_Widget extends DoTheRightThing\WPPlugin\r_1_4_6\Widget{};
 
 ?>
