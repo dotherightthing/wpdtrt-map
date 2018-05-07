@@ -6,7 +6,7 @@ Tags: map
 Requires at least: 4.9.5
 Tested up to: 4.9.5
 Requires PHP: 5.6.30
-Stable tag: 0.3.2
+Stable tag: 0.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,9 @@ C) Shortcode options:
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.3.3 =
+* Fix path to autoloader when loaded as a test dependency
 
 = 0.3.2 =
 * Include release number in wpdtrt-plugin namespaces
