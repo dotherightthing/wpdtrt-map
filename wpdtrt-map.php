@@ -12,7 +12,18 @@
  * Domain Path:  /languages
  */
 
-require_once plugin_dir_path( __FILE__ ) . "vendor/autoload.php";
+/**
+ * Autoload namespaced package classes
+ * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-WordPress-plugin-dependencies
+ */
+if ( defined( 'WPDTRT_MAP_TEST_DEPENDENCY' ) ) {
+  $projectRootPath = realpath(__DIR__ . '/../../..') . '/';
+}
+else {
+  $projectRootPath = '';
+}
+
+require_once $projectRootPath . "vendor/autoload.php";
 
 /**
  * Constants
@@ -108,7 +119,7 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
 
   // base class
   // redundant, but includes the composer-generated autoload file if not already included
-  require_once(WPDTRT_MAP_PATH . 'vendor/dotherightthing/wpdtrt-plugin/index.php');
+  require_once($projectRootPath . 'vendor/dotherightthing/wpdtrt-plugin/index.php');
 
   // classes without composer.json files are loaded via Bower
   //require_once(WPDTRT_MAP_PATH . 'vendor/name/file.php');
