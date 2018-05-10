@@ -3,7 +3,7 @@
  * Plugin Name:  DTRT Map
  * Plugin URI:   https://github.com/dotherightthing/wpdtrt-map
  * Description:  Embed an interactive map.
- * Version:      0.3.3
+ * Version:      0.3.4
  * Author:       Dan Smith
  * Author URI:   https://profiles.wordpress.org/dotherightthingnz
  * License:      GPLv2 or later
@@ -67,7 +67,7 @@ if( ! defined( 'WPDTRT_MAP_VERSION' ) ) {
  * @version   0.0.1
  * @since     0.7.5
  */
-  define( 'WPDTRT_MAP_VERSION', '0.3.3' );
+  define( 'WPDTRT_MAP_VERSION', '0.3.4' );
 }
 
 if( ! defined( 'WPDTRT_MAP_PATH' ) ) {
@@ -299,7 +299,7 @@ if( ! defined( 'ACF_EARLY_ACCESS' ) ) {
 
     global $wpdtrt_map_plugin;
 
-    $wpdtrt_map_shortcode = new DoTheRightThing\WPPlugin\r_1_4_6\Shortcode(
+    $wpdtrt_map_shortcode = new DoTheRightThing\WPPlugin\r_1_4_14\Shortcode(
       array(
         'name' => 'wpdtrt_map_shortcode',
         'plugin' => $wpdtrt_map_plugin,
