@@ -4,31 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c908e9dc5ebcf70607a5260883d0fe25",
+    "content-hash": "af3dc1cce46bfda525613bb698a7fc94",
     "packages": [
-        {
-            "name": "advanced-custom-fields/advanced-custom-fields",
-            "version": "5.6.10",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "trunk/"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.packagist.com/dotherightthing/dists/advanced-custom-fields/advanced-custom-fields/5.6.10.0/4e3a55e2a9734425e24eb78aa4793941.zip",
-                "reference": "trunk/",
-                "shasum": null,
-                "mirrors": [
-                    {
-                        "url": "https://repo.packagist.com/dotherightthing/dists/%package%/%version%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "type": "library",
-            "notification-url": "https://repo.packagist.com/dotherightthing/downloads/"
-        },
         {
             "name": "dotherightthing/wpdtrt-debug",
             "version": "1.0.2",
