@@ -14,4 +14,4 @@ Please read the [WordPress readme.txt](readme.txt).
 
 ## Dependencies
 
-1. The map location is selected using the free version of [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
+1. The geocoded map location is selected using the free version of [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
