@@ -258,13 +258,12 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 		}
 
 		// "Include Leaflet CSS file in the head section of your document:"
-		$style = '';
+		$style  = '';
 		$style .= '<link';
-		$style .= ' rel="stylesheet"';
+		$style .= ' rel="stylesheet"'; // phpcs:ignore
 		$style .= ' href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"';
 		$style .= ' integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="';
 		$style .= ' crossorigin=""';
-		// $style .= ' ver=""';.
 		$style .= ' />';
 
 		echo $style;
