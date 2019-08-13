@@ -6,7 +6,7 @@ Tags: map, leafletjs, location, geotag
 Requires at least: 4.9.5
 Tested up to: 4.9.5
 Requires PHP: 5.6.30
-Stable tag: 0.3.4
+Stable tag: 0.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,13 @@ C) Shortcode options:
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.3.5 =
+* Regenerate plugin to sync with generator-wpdtrt-plugin-boilerplate 0.8.3 + wpdtrt-plugin-boilerplate 1.5.6
+* Add Composer dependencies and repositories
+* Update Composer & NPM dependencies
+* Ignore 'NonEnqueuedStylesheet' error
+* Use WPDTRT Exif to pull the lat and long values from the featured image, rather than requiring the author to choose these by using the ACF picker
 
 = 0.3.4 =
 * Update wpdtrt-plugin to 1.4.14
