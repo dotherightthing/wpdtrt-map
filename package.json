@@ -17,9 +17,14 @@
     }
   ],
   "bugs": {
-    "url" : "https://github.com/dotherightthing/wpdtrt-map/issues"
+    "url": "https://github.com/dotherightthing/wpdtrt-map/issues"
   },
-  "keywords": ["map", "leafletjs", "location", "geotag"],
+  "keywords": [
+    "map",
+    "leafletjs",
+    "location",
+    "geotag"
+  ],
   "devDependencies": {
     "gulp": "^3.9.1"
   },
