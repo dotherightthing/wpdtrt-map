@@ -20,13 +20,24 @@
         "dotherightthing/wpdtrt-plugin-boilerplate": "^1.5.6"
     },
     "require-dev": {
-        "advanced-custom-fields/advanced-custom-fields": "5.6.*",
+        "wpackagist-plugin/advanced-custom-fields": "5.6.*",
         "phpdocumentor/phpdocumentor": "2.9.0",
         "phpunit/phpunit": "^5.7",
         "psy/psysh" : "~0.6",
         "wp-cli/wp-cli" : "~0.22",
         "wp-coding-standards/wpcs": "^0.14.1",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
+    },
+    "extras": {
+        "require-wp": [
+            {
+                "name": "Advanced Custom Fields",
+                "host": "wpackagist",
+                "repository": "wpackagist-plugin/advanced-custom-fields",
+                "file": "acf.php",
+                "description": "Provides a map picker for specifying a geocoded location"
+            }
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
