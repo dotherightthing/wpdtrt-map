@@ -33,4 +33,14 @@ $breakpoints: (
 // http://hex2rgba.devoth.com/
 // -------------------------------------------------------------------
 
-$wpdtrt-map-bg-color--demo: transparent;
+// -------------------------------------------------------------------
+// Colors
+// http://hex2rgba.devoth.com/
+// -------------------------------------------------------------------
+
+$wpdtrt-map-legend-bg-color: rgba(255, 255, 255, 1);
+$wpdtrt-map-legend-text-color: rgba(0, 0, 0, 1);
+$wpdtrt-map-leaflet-bar-border-color: rgba(0, 0, 0, .4);
+$wpdtrt-map-leaflet-attribution-bg-color: rgba(255, 255, 255, .5);
+$wpdtrt-map-link-bg-color: rgba(0, 0, 0, .7);
+$wpdtrt-map-link-text-color: rgba(255, 255, 255, 1);
