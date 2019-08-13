@@ -294,15 +294,6 @@ function wpdtrt_map_plugin_init() {
 			'plugin_options'        => $plugin_options,
 			'instance_options'      => $instance_options,
 			'demo_shortcode_params' => $demo_shortcode_params,
-			// plugin_dependencies copied from previous version.
-			'plugin_dependencies'   => array(
-				array(
-					'name'        => 'Advanced Custom Fields',
-					'slug'        => 'advanced-custom-fields',
-					'required'    => true,
-					'is_callable' => array( 'acf_field_google_map', 'render_field' ),
-				),
-			),
 		)
 	);
 }
