@@ -88,6 +88,8 @@ echo $before_title . $title . $after_title;
 		var marker = L.marker([<?php echo $coordinates; ?>]).addTo(wpdtrt_map_<?php echo $unique_id; ?>);
 
 		// http://leafletjs.com/examples/choropleth/
+		// TODO: use wpdtrt-gallery-location value here, or suppress.
+		/*
 		var legend = L.control({ position: 'topleft' });
 		legend.onAdd = function (map) {
 			// tagname:div, classname:info legend
@@ -95,6 +97,7 @@ echo $before_title . $title . $after_title;
 				div.innerHTML = '<?php echo $address; ?>';
 			return div;
 		};
+		*/
 
 		legend.addTo(wpdtrt_map_<?php echo $unique_id; ?>);
 		// https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/
