@@ -31,6 +31,8 @@ $options = get_query_var( 'options' );
 // @link http://kb.network.dan/php/wordpress/extract/.
 extract( $options, EXTR_IF_EXISTS );
 
+$plugin_options = $plugin->get_plugin_options();
+
 /**
  * ACF's Google Map field type supports geocoding
  * so entering an address there will generate
