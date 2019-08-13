@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "wpdtrt-map",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Embed an interactive map.",
   "main": "wpdtrt-map.php",
   "person": {

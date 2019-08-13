@@ -6,7 +6,7 @@ Tags: map, leafletjs, location, geotag
 Requires at least: 4.9.5
 Tested up to: 4.9.5
 Requires PHP: 5.6.30
-Stable tag: 0.3.5
+Stable tag: 0.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,11 @@ C) Shortcode options:
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.3.6 =
+* Use lowercase for Composer dependencies
+* Fix missing leaflet token
+* Suppress map legend, until there is something meaningful to display
 
 = 0.3.5 =
 * Regenerate plugin to sync with generator-wpdtrt-plugin-boilerplate 0.8.3 + wpdtrt-plugin-boilerplate 1.5.6
