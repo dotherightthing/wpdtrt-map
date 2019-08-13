@@ -2,6 +2,7 @@
 <ruleset name="DTRT WordPress">
     <description>WordPress standards with DTRT dev exclusions</description>
     <!-- The WordPress ruleset cherry picks sniffs from Generic, PEAR, PSR-2, Squiz etc -->
+    <!-- Refer to https://github.com/WordPress/WordPress-Coding-Standards -->
     <rule ref="WordPress">
         <exclude name="WordPress.Files.FileName"/>
         <exclude name="WordPress.Functions.DontExtract"/>
