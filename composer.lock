@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccb6fb4f1bb913280d34adff517a665f",
+    "content-hash": "01f4670e541bb0145abae3f1a34f5d27",
     "packages": [
         {
             "name": "dotherightthing/wpdtrt-debug",
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dotherightthing/wpdtrt-debug.git",
+                "url": "https://github.com/dotherightthing/wpdtrt-debug.git",
                 "reference": "38036744142f6397d3ed23191de68ffd5b2156b6"
             },
             "dist": {
@@ -56,7 +56,7 @@
             "version": "1.5.6",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dotherightthing/wpdtrt-plugin-boilerplate.git",
+                "url": "https://github.com/dotherightthing/wpdtrt-plugin-boilerplate.git",
                 "reference": "61501036441489feef36a4d0c11f4b5f369deaef"
             },
             "dist": {
@@ -165,12 +165,12 @@
             "version": "dev-autoloader",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dotherightthing/tgm-plugin-activation.git",
+                "url": "https://github.com/dotherightthing/TGM-Plugin-Activation.git",
                 "reference": "270098e8d04bac9ac1b7c482c98a5d27f0080a91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dotherightthing/tgm-plugin-activation/zipball/270098e8d04bac9ac1b7c482c98a5d27f0080a91",
+                "url": "https://api.github.com/repos/dotherightthing/TGM-Plugin-Activation/zipball/270098e8d04bac9ac1b7c482c98a5d27f0080a91",
                 "reference": "270098e8d04bac9ac1b7c482c98a5d27f0080a91",
                 "shasum": ""
             },
@@ -1023,6 +1023,57 @@
                 "php"
             ],
             "time": "2019-06-08T11:03:04+00:00"
+        },
+        {
+            "name": "dotherightthing/wpdtrt-exif",
+            "version": "0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dotherightthing/wpdtrt-exif.git",
+                "reference": "633838280a20821e4144a1fc5ae6903bc8a8a542"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-exif/zipball/633838280a20821e4144a1fc5ae6903bc8a8a542",
+                "reference": "633838280a20821e4144a1fc5ae6903bc8a8a542",
+                "shasum": ""
+            },
+            "require": {
+                "dotherightthing/wpdtrt-plugin-boilerplate": "^1.5.3",
+                "prairiewest/phpconvertdmstodecimal": "dev-master"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+                "phpdocumentor/phpdocumentor": "2.9.0",
+                "phpunit/phpunit": "^5.7",
+                "psy/psysh": "~0.6",
+                "wp-cli/wp-cli": "~0.22",
+                "wp-coding-standards/wpcs": "^0.14.1"
+            },
+            "type": "library",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Dan Smith",
+                    "email": "dev@dotherightthing.co.nz",
+                    "homepage": "https://github.com/dotherightthing/wpdtrt-exif",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds EXIF (time and geotag) fields to the attachment media modal, for use by other plugins.",
+            "keywords": [
+                "attachment",
+                "exif",
+                "geotag"
+            ],
+            "support": {
+                "email": "support@dotherightthing.co.nz",
+                "issues": "https://github.com/dotherightthing/wpdtrt-exif/issues",
+                "source": "https://github.com/dotherightthing/wpdtrt-exif/tree/0.2.2"
+            },
+            "time": "2018-07-27T11:07:05+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -2738,6 +2789,38 @@
                 "dependency injection"
             ],
             "time": "2013-11-22T08:30:29+00:00"
+        },
+        {
+            "name": "prairiewest/PHPconvertDMSToDecimal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/prairiewest/PHPconvertDMSToDecimal.git",
+                "reference": "b2b5ccd2fb3fb3092fe32e8a3f1bf5058cad1e25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/prairiewest/PHPconvertDMSToDecimal/zipball/b2b5ccd2fb3fb3092fe32e8a3f1bf5058cad1e25",
+                "reference": "b2b5ccd2fb3fb3092fe32e8a3f1bf5058cad1e25",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "convert.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Todd Trann"
+                }
+            ],
+            "description": " Convert degrees / minutes / seconds to decimal degrees in PHP ",
+            "support": {
+                "source": "https://github.com/prairiewest/PHPconvertDMSToDecimal/tree/master",
+                "issues": "https://github.com/prairiewest/PHPconvertDMSToDecimal/issues"
+            },
+            "time": "2017-07-18T05:12:23+00:00"
         },
         {
             "name": "psr/cache",
@@ -5635,7 +5718,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "prairiewest/phpconvertdmstodecimal": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

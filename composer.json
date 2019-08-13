@@ -22,6 +22,7 @@
     "require-dev": {
         "dotherightthing/wpdtrt-exif": "^0.2.2",
         "wpackagist-plugin/advanced-custom-fields": "5.6.*",
+        "prairiewest/PHPconvertDMSToDecimal": "dev-master",
         "phpdocumentor/phpdocumentor": "2.9.0",
         "phpunit/phpunit": "^5.7",
         "psy/psysh" : "~0.6",
@@ -36,7 +37,7 @@
                 "host": "github",
                 "repository": "dotherightthing/wpdtrt-exif",
                 "file": "wpdtrt-exif.php",
-                "description": "Pulls the latitude and longitude information from the featured image, if available."
+                "description": "Extracts the latitude and longitude information from the featured image, if available."
             },
             {
                 "name": "Advanced Custom Fields",
@@ -44,6 +45,13 @@
                 "repository": "wpackagist-plugin/advanced-custom-fields",
                 "file": "acf.php",
                 "description": "Provides a map picker for specifying a geocoded location"
+            },
+            {
+                "name": "PHPconvertDMSToDecimal",
+                "host": "github",
+                "repository": "prairiewest/PHPconvertDMSToDecimal",
+                "file": "convert.php",
+                "description": "Used by WPDTRT EXIF to convert geotagging information"
             }
         ]
     },
@@ -57,6 +65,14 @@
         {
             "type": "vcs",
             "url": "https://github.com/dotherightthing/wpdtrt-debug"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dotherightthing/wpdtrt-exif"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/prairiewest/PHPconvertDMSToDecimal"
         },
         {
             "type": "vcs",
