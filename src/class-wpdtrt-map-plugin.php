@@ -73,14 +73,25 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\r_1_4_14\Plugin {
      */
     public function get_acf_map() {
 
-        // the map location is 'picked' using the ACF Map field
-        $acf_map = get_field('wpdtrt_map_acf_google_map_location');
+        // the map location _was_ 'picked' using the ACF Map field
+        // $acf_map = get_field('wpdtrt_map_acf_google_map_location');
+
+        // the post object
+        global $post;
 
         // it can also be mocked using the demo_shortcode_params
         $demo_shortcode_options = $this->get_demo_shortcode_params();
 
-        // real map embed on any page
-        if ( ! $acf_map ) {
+        // get geotag from image
+        $featured_image_latlng = $this->get_featured_image_latlng( $post );
+
+        if ( 2 === count( $featured_image_latlng ) ) {
+            $acf_map = array(
+                'address' => __('Test 1', 'wpdtrt-map'),
+                'lat' => $featured_image_latlng['latitude'],
+                'lng' => $featured_image_latlng['longitude']
+            );
+        } else {
             // shortcode demo on options page
             if ( is_admin() && array_key_exists('mock_acf_map', $demo_shortcode_options) ) {
                 $mock_acf_map = $demo_shortcode_options['mock_acf_map'];
@@ -94,6 +105,48 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPPlugin\r_1_4_14\Plugin {
         }
 
         return $acf_map;
+    }
+
+    /**
+     * Get the latitude and longitude from a post's/page's featured image.
+     * to obtain a historical forecast for this location.
+     *
+     * @since       0.1.0
+     * @version     1.0.0
+     * @param       object $post Post object.
+     * @return      array ('latitude', 'longitude')
+     *
+     * @uses https://github.com/dotherightthing/wpdtrt-exif
+     * @see  https://github.com/dotherightthing/wpdtrt-weather
+     */
+    public function get_featured_image_latlng( $post ) {
+
+        $lat_lng = array();
+
+        if ( ! class_exists( 'WPDTRT_Exif_Plugin' ) ) {
+            return $lat_lng;
+        } elseif ( ! method_exists( 'WPDTRT_Exif_Plugin', 'get_attachment_metadata_gps' ) ) {
+            return $lat_lng;
+        } elseif ( ! isset( $post ) ) {
+            return $lat_lng;
+        }
+
+        global $wpdtrt_exif_plugin; // created by wpdtrt-exif.php.
+
+        $featured_image_id       = get_post_thumbnail_id( $post->ID );
+        $attachment_metadata     = wp_get_attachment_metadata( $featured_image_id, false ); // core meta.
+        $attachment_metadata_gps = $wpdtrt_exif_plugin->get_attachment_metadata_gps( $attachment_metadata, 'number', $post );
+
+        if ( ! isset( $attachment_metadata_gps['latitude'], $attachment_metadata_gps['longitude'] ) ) {
+            return array();
+        }
+
+        $lat_lng = array(
+            'latitude'  => $attachment_metadata_gps['latitude'],
+            'longitude' => $attachment_metadata_gps['longitude'],
+        );
+
+        return $lat_lng;
     }
 
     /**
