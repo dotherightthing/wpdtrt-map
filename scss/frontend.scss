@@ -2,14 +2,14 @@
 // Styles for the public front-end
 //
 // @package     WPDTRT_Map
-// @version 	0.0.1
-// @since       0.7.5
+// @version 	0.1.0
+// @since       0.8.3 DTRT WordPress Plugin Boilerplate Generator
 //
 
-@import "vendor/dotherightthing/wpdtrt-plugin/scss/_variables.scss";
-@import "vendor/dotherightthing/wpdtrt-plugin/scss/_extends.scss";
-@import "variables";
-@import "extends";
+@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/variables';
+@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/extends';
+@import 'variables';
+@import 'extends';
 
 // -------------------------------------------------------------------
 // Styles
@@ -17,97 +17,95 @@
 // -------------------------------------------------------------------
 
 .wpdtrt-map {
-	position: relative; // AP for link
-	margin-top: 20px;
+    position: relative; // AP for link
+    margin-top: 20px;
 }
 
 .wpdtrt-map-embed {
-	height: 500px;
+    height: 500px;
 
-	// Custom Legend
+    // Custom Legend
 
-	.wpdtrt-map-legend {
-		background: $wpdtrt-map-legend-bg-color;
-		color: $wpdtrt-map-legend-text-color;
-		border: 1px solid;
-		line-height: initial;
-		padding: 5px;
-		margin: 0;
-	}
+    .wpdtrt-map-legend {
+        background: $wpdtrt-map-legend-bg-color;
+        color: $wpdtrt-map-legend-text-color;
+        line-height: initial;
+        padding: 5px;
+        border: 1px solid;
+        margin: 0;
+    }
 
-	// Zoom controls
+    // Zoom controls
 
-	// add space below the control for the map link
-	// @see https://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
-	.leaflet-bottom.leaflet-left {
-		.leaflet-control-zoom {
-			bottom: 30px !important; // an extra 10px allows for the missing .mapbox-logo.leaflet-control
-		}
-	}
+    // add space below the control for the map link
+    // @see https://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
+    .leaflet-bottom {
+        &.leaflet-left {
+            .leaflet-control-zoom {
+                bottom: 30px !important; // an extra 10px allows for the missing .mapbox-logo.leaflet-control
+            }
+        }
+    }
 
-	// allow for leaflet incorrectly applying touch styling in MacOS Chrome
-	&.leaflet-touch {
+    // allow for leaflet incorrectly applying touch styling in MacOS Chrome
+    &.leaflet-touch {
 
-		.leaflet-bar a {
-			font-size: 16px; // match Godaddy which uses mapbox icons instead
-			width: 26px; // match Godaddy
-			height: 26px; // match Godaddy
-			line-height: 23px; // vertically center		
-		}
+        .leaflet-bar {
+            a {
+                width: 26px; // match Godaddy
+                height: 26px; // match Godaddy
+                font-size: 16px; // match Godaddy which uses mapbox icons instead
+                line-height: 23px; // vertically center     
+            }
+        }
 
-		.leaflet-control-layers,
-		.leaflet-bar {
-			border-width: 1px;
-			border-color: $wpdtrt-map-leaflet-bar-border-color;
-			border-radius: 3px;
-		}
-	}
+        .leaflet-control-layers,
+        .leaflet-bar {
+            border-color: $wpdtrt-map-leaflet-bar-border-color;
+            border-width: 1px;
+            border-radius: 3px;
+        }
+    }
 
-	// Attributions
+    // Attributions
 
-	&.leaflet-container {
+    &.leaflet-container {
+        .leaflet-control-attribution {
+            background-color: $wpdtrt-map-leaflet-attribution-bg-color;
+            font-size: 12px;
 
-		 .leaflet-control-attribution {
-	 		background-color: $wpdtrt-map-leaflet-attribution-bg-color;
-			font-size: 12px;
-
-			a {
-				color: inherit;
-				text-decoration: underline;
-			}
-		}
-	}
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .wpdtrt-map-link {
-	position: absolute;
-	bottom: 0;
-	z-index: 1001; // leaflet uses 400, leaflet-top and leaflet-bottom use 1000
+    position: absolute;
+    bottom: 0;
+    z-index: 1001; // leaflet uses 400, leaflet-top and leaflet-bottom use 1000
 
-	a {
-		font-weight: normal;
-		font-style: normal;
-		line-height: 20px;
-
-		display: block;
-
-		height: 20px;
-		padding: 5px 10px;
-
-		vertical-align: middle;
-
-		color: $wpdtrt-map-link-text-color;
-		background-color: $wpdtrt-map-link-bg-color;
-	}
+    a {
+        display: block;
+        height: 20px;
+        vertical-align: middle;
+        background-color: $wpdtrt-map-link-bg-color;
+        color: $wpdtrt-map-link-text-color;
+        line-height: 20px;
+        font-weight: normal;
+        font-style: normal;
+        padding: 5px 10px;
+    }
 }
 
 // -------------------------------------------------------------------
 // Media Queries
 // -------------------------------------------------------------------
 
-@include media("<=30em") {
-
-	.wpdtrt-map-link {
-		position: relative;
-	}
+@include media('<=30em') {
+    .wpdtrt-map-link {
+        position: relative;
+    }
 }

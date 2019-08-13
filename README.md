@@ -1,4 +1,4 @@
-# DTRT Map
+# DTRT WP Map
 
 [![GitHub release](https://img.shields.io/github/release/dotherightthing/wpdtrt-map.svg)](https://github.com/dotherightthing/wpdtrt-map/releases) [![Build Status](https://travis-ci.org/dotherightthing/wpdtrt-map.svg?branch=master)](https://travis-ci.org/dotherightthing/wpdtrt-map) [![GitHub issues](https://img.shields.io/github/issues/dotherightthing/wpdtrt-map.svg)](https://github.com/dotherightthing/wpdtrt-map/issues)
 
@@ -6,7 +6,7 @@ Embed an interactive map.
 
 ## Setup and Maintenance
 
-Please read [DTRT WP Plugin: Setup and Maintenance](https://github.com/dotherightthing/wpdtrt-plugin#setup-and-maintenance).
+Please read [DTRT WordPress Plugin Boilerplate: Workflows](https://github.com/dotherightthing/wpdtrt-plugin-boilerplate/wiki/Workflows).
 
 ## WordPress Installation and Usage
 

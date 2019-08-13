@@ -2,27 +2,27 @@
 // Styles for the WP Admin plugin options page
 //
 // @package     WPDTRT_Map
-// @version 	0.0.1
-// @since       0.7.5
+// @version 	0.1.0
+// @since       0.8.3 DTRT WordPress Plugin Boilerplate Generator
 //
 
-@import "vendor/dotherightthing/wpdtrt-plugin/scss/_variables.scss";
-@import "vendor/dotherightthing/wpdtrt-plugin/scss/_extends.scss";
-@import "vendor/dotherightthing/wpdtrt-plugin/scss/_backend.scss";
-@import "variables";
-@import "extends";
+@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/variables';
+@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/extends';
+@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/backend';
+@import 'variables';
+@import 'extends';
 
 // duplicate frontend styles for settings page demo
-@import "frontend";
+@import 'frontend';
 
 .wpdtrt-maps-tip {
-	display: block;
-	font-size: .85em;
-	padding-top: .2em;
+    display: block;
+    font-size: .85em;
+    padding-top: .2em;
 }
 
 .settings_page_wpdtrt-map {
-	.wpdtrt-map {
-		width: 500px
-	}
+    .wpdtrt-map {
+        width: 500px;
+    }
 }

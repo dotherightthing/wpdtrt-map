@@ -2,19 +2,23 @@
 // Variables
 //
 // @package     WPDTRT_Map
-// @version 	0.0.1
-// @since       0.7.6
+// @version 	0.1.0
+// @since       0.8.3 DTRT WordPress Plugin Boilerplate Generator
 //
 
-@import "node_modules/include-media/dist/_include-media";
+// front-end dependencies are specified in
+// ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/package.json
+// but installed to ./node_modules, via Yarn workspaces
+@import 'node_modules/include-media/dist/include-media';
 
 // -------------------------------------------------------------------
 // Breakpoints
 // -------------------------------------------------------------------
 
 // $breakpoints for include-media
-// 710+ wpdtrt-dbth 3 column layout
-// 910+ wpdtrt-dbth MENU button switches to an inline menu
+// Usage: @include media(">phone", "<=tablet") { ... }
+// Usage: @include media("<=1150px") { ... }
+// See https://include-media.com/
 
 $breakpoints: (
     phone: 320px,
@@ -29,9 +33,4 @@ $breakpoints: (
 // http://hex2rgba.devoth.com/
 // -------------------------------------------------------------------
 
-$wpdtrt-map-legend-bg-color: rgba(255, 255, 255, 1);
-$wpdtrt-map-legend-text-color: rgba(0, 0, 0, 1);
-$wpdtrt-map-leaflet-bar-border-color: rgba(0,0,0,.4);
-$wpdtrt-map-leaflet-attribution-bg-color: rgba(255,255,255,.5);
-$wpdtrt-map-link-bg-color: rgba(0,0,0,.7);
-$wpdtrt-map-link-text-color: rgba(255, 255, 255, 1);
+$wpdtrt-map-bg-color--demo: transparent;

@@ -2,7 +2,7 @@
     "name": "dotherightthing/wpdtrt-map",
     "description": "Embed an interactive map.",
     "type": "library",
-    "keywords": ["map"],
+    "keywords": ["map", "leafletjs", "location", "geotag"],
     "license": "ISC",
     "authors": [
         {
@@ -17,22 +17,34 @@
         "issues": "https://github.com/dotherightthing/wpdtrt-map/issues"
     },
     "require": {
-        "dotherightthing/wpdtrt-plugin": "^1.0.0"
+        "dotherightthing/wpdtrt-plugin-boilerplate": "^1.5.6"
     },
-    "minimum-stability": "stable",
-    "repositories": [
+    "require-dev": {
+        "advanced-custom-fields/advanced-custom-fields": "5.6.*",
+        "phpdocumentor/phpdocumentor": "2.9.0",
+        "phpunit/phpunit": "^5.7",
+        "psy/psysh" : "~0.6",
+        "wp-cli/wp-cli" : "~0.22",
+        "wp-coding-standards/wpcs": "^0.14.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories":[
         {
-            "type": "composer",
-            "url": "https://repo.packagist.com/dotherightthing/"
+            "type": "vcs",
+            "url": "https://github.com/dotherightthing/wpdtrt-plugin-boilerplate"
         },
         {
-            "packagist.org": false
+            "type": "vcs",
+            "url": "https://github.com/dotherightthing/wpdtrt-debug"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dotherightthing/tgm-plugin-activation"
         }
     ],
     "config": {
         "vendor-dir": "vendor"
-    },
-    "require-dev": {
-        "advanced-custom-fields/advanced-custom-fields": "5.6.*"
     }
 }

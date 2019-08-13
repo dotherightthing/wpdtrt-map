@@ -18,22 +18,19 @@
  * Remove Options from {$wpdb->prefix}_options: Yes
  * Remove Tables from wpdb: Yes
  *
- * @link https://developer.wordpress.org/plugins/the-basics/best-practices/#file-organization
- * @link https://developer.wordpress.org/plugins/the-basics/uninstall-methods/#method-2-uninstall-php
- *
  * @package     WPDTRT_Map
- * @version     0.0.1
- * @since       0.7.5
+ * @version     0.1.0
+ * @since       0.8.3 DTRT WordPress Plugin Boilerplate Generator
+ * @see https://developer.wordpress.org/plugins/the-basics/best-practices/#file-organization
+ * @see https://developer.wordpress.org/plugins/the-basics/uninstall-methods/#method-2-uninstall-php
  */
 
-// if uninstall.php is not called by WordPress, die
-if ( ! defined('WP_UNINSTALL_PLUGIN') ) {
+// if uninstall.php is not called by WordPress, die.
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	die;
 }
 
-delete_option('wpdtrt_map');
+delete_option( 'wpdtrt_map' );
 
-// for site options in Multisite
-delete_site_option('wpdtrt_map');
-
-?>
+// for site options in Multisite.
+delete_site_option( 'wpdtrt_map' );

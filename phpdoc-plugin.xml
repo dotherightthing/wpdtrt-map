@@ -12,10 +12,11 @@
   </transformations>
   <files>
     <directory>.</directory>
+    <directory>vendor/dotherightthing/wpdtrt-plugin-boilerplate</directory>
     <ignore>bin/*</ignore>
     <ignore>node_modules/*</ignore>
-    <ignore>index.php</ignore>
-    <ignore>tests/bootstrap.php</ignore>
+    <ignore>tests/*</ignore>
     <ignore>vendor/*</ignore>
+    <ignore>wp-content/plugins/*</ignore>
   </files>
 </phpdoc>
