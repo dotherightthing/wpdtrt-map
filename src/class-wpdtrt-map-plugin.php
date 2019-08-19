@@ -41,7 +41,6 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	 */
 	protected function wp_setup() {
 
-		// edit here.
 		parent::wp_setup();
 
 		// add actions and filters here.

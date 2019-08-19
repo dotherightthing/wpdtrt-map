@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://dontbelievethehype.co.nz",
+  "pageLoadTimeout": 20000,
+  "responseTimeout": 5000,
+  "viewportWidth": 1366,
+  "viewportHeight": 768,
+  "watchForFileChanges": false
+}

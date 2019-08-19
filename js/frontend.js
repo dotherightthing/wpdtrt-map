@@ -21,16 +21,16 @@ const wpdtrt_map_ui = {
      * @since 0.1.0
      */
     init: () => {
-        "use strict";
-
         console.log("wpdtrt_map_ui.init");
     }
 }
 
+// http://stackoverflow.com/a/28771425
+document.addEventListener("touchstart", () => {
+  // nada, this is just a hack to make :focus state render on touch
+}, false);
+
 jQuery(document).ready( ($) => {
-
-    "use strict";
-
     const config = wpdtrt_map_config;
     wpdtrt_map_ui.init();
 });

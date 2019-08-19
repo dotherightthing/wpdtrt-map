@@ -8,5 +8,6 @@ js/*-es5.js
 logs
 node_modules
 release.zip
+*sublime-*
 vendor
 wp-content

@@ -14,10 +14,12 @@
     ],
     "support": {
         "email": "support@dotherightthing.co.nz",
-        "issues": "https://github.com/dotherightthing/wpdtrt-map/issues"
+        "issues": "https://github.com/dotherightthing/wpdtrt-map/issues",
+        "source": "https://github.com/dotherightthing/wpdtrt-map",
+        "wiki": "https://github.com/dotherightthing/wpdtrt-map/wiki"
     },
     "require": {
-        "dotherightthing/wpdtrt-plugin-boilerplate": "^1.5.6"
+        "dotherightthing/wpdtrt-plugin-boilerplate": "^1.5.10"
     },
     "require-dev": {
         "dotherightthing/wpdtrt-exif": "^0.2.2",
