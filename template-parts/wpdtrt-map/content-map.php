@@ -1,10 +1,13 @@
 <?php
 /**
- * Template to display plugin output in shortcodes and widgets
+ * File: template-parts/wpdtrt-map/content-map.php
  *
- * @package   DTRT WP Map
- * @version   0.1.0
- * @since     0.8.3 DTRT WordPress Plugin Boilerplate Generator
+ * Template to display plugin output in shortcodes and widgets.
+ *
+ * Since:
+ *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
+ *
+ * @package WPDTRT_Map
  */
 
 // Predeclare variables

@@ -2,26 +2,28 @@
 /**
  * Shortcode sub class.
  *
- * @package wpdtrt_map
- * @version 0.1.0
- * @since   0.8.3 DTRT WordPress Plugin Boilerplate Generator
+ * Since:
+ *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
+ *
+ * @package WPDTRT_Map
  */
 
 /**
- * Extend the base class to inherit boilerplate functionality.
- * Adds application-specific methods.
+ * Class: WPDTRT_Map_Shortcode
  *
- * @since   1.0.0
- * @version 1.0.0
+ * Extend the base class to inherit boilerplate functionality.
+ *
+ * Adds application-specific methods.
  */
 class WPDTRT_Map_Shortcode extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_6\Shortcode {
 
 	/**
+	 * Function: __construct
+	 *
 	 * Supplement shortcode initialisation.
 	 *
-	 * @param     array $options Shortcode options.
-	 * @since     1.0.0
-	 * @version   1.1.0
+	 * Parameters:
+	 *   (array) $options - Shortcode options.
 	 */
 	public function __construct( $options ) {
 

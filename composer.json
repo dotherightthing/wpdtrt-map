@@ -26,7 +26,7 @@
         "wpackagist-plugin/advanced-custom-fields": "5.6.*",
         "prairiewest/phpconvertdmstodecimal": "dev-master",
         "phpdocumentor/phpdocumentor": "2.9.0",
-        "phpunit/phpunit": "^5.7",
+        "phpunit/phpunit": "^7.5.14",
         "psy/psysh" : "~0.6",
         "wp-cli/wp-cli" : "~0.22",
         "wp-coding-standards/wpcs": "^0.14.1",

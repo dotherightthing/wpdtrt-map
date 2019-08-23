@@ -10,10 +10,10 @@
  * $debug logs are output with the test output in Terminal
  * A failed assertion may obscure other failed assertions in the same test.
  *
+ * Since:
+ *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
+ *
  * @package WPDTRT_Map
- * @version 0.1.0
- * @since   0.8.3 DTRT WordPress Plugin Boilerplate Generator
- * @see https://github.com/dotherightthing/wpdtrt-plugin-boilerplate/wiki/Testing-&-Debugging#testing
  */
 
 /**
@@ -48,7 +48,7 @@ class WPDTRT_MapTest extends WP_UnitTestCase {
 		parent::setUp();
 
 		$this->post_id_1 = $this->create_post( array(
-			'post_title'   => 'DTRT WP Map test',
+			'post_title'   => 'DTRT Map test',
 			'post_content' => 'This is a simple test',
 		));
 	}

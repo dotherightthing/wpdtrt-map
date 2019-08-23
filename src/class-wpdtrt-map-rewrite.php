@@ -2,26 +2,28 @@
 /**
  * Rewrite sub class.
  *
- * @package wpdtrt_map
- * @version 0.1.0
- * @since   0.8.3 DTRT WordPress Plugin Boilerplate Generator
+ * Since:
+ *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
+ *
+ * @package WPDTRT_Map
  */
 
 /**
- * Extend the base class to inherit boilerplate functionality.
- * Adds application-specific methods.
+ * Class: WPDTRT_Map_Rewrite
  *
- * @since   1.0.0
- * @version 1.0.0
+ * Extend the base class to inherit boilerplate functionality.
+ *
+ * Adds application-specific methods.
  */
 class WPDTRT_Map_Rewrite extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_6\Rewrite {
 
 	/**
-	 * Supplement plugin initialisation.
+	 * Function: __construct
 	 *
-	 * @param     array $options Rewrite options.
-	 * @since     1.0.0
-	 * @version   1.1.0
+	 * Supplement rewrite initialisation.
+	 *
+	 * Parameters:
+	 *   (array) $options - Rewrite options.
 	 */
 	public function __construct( $options ) {
 

@@ -1,14 +1,14 @@
 <?php
 /**
- * DTRT WP Map
+ * DTRT Map
  *
- * @package     wpdtrt_map
+ * @package     WPDTRT_Map
  * @author      Dan Smith
  * @copyright   2018 Do The Right Thing
  * @license     GPL-2.0+
  *
  * @wordpress-plugin
- * Plugin Name:  DTRT WP Map
+ * Plugin Name:  DTRT Map
  * Plugin URI:   https://github.com/dotherightthing/wpdtrt-map
  * Description:  Embed an interactive map.
  * Version:      0.3.6
@@ -367,7 +367,7 @@ function wpdtrt_map_widget_init() {
 	$wpdtrt_map_widget = new WPDTRT_Map_Widget(
 		array(
 			'name'                      => 'wpdtrt_map_widget',
-			'title'                     => __( 'DTRT WP Map Widget', 'wpdtrt-map' ),
+			'title'                     => __( 'DTRT Map Widget', 'wpdtrt-map' ),
 			'description'               => __( 'Embed an interactive map.', 'wpdtrt-map' ),
 			'plugin'                    => $wpdtrt_map_plugin,
 			'template'                  => 'map',

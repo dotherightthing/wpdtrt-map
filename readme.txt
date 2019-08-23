@@ -1,5 +1,5 @@
 
-=== DTRT WP Map ===
+=== DTRT Map ===
 Contributors: dotherightthingnz
 Donate link: http://dotherightthing.co.nz
 Tags: map, leafletjs, location, geotag
@@ -20,7 +20,7 @@ Embed an interactive map.
 
 1. Upload the plugin files to the `/wp-content/plugins/wpdtrt-map` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Use the Settings->DTRT WP Map screen to configure the plugin
+3. Use the Settings->DTRT Map screen to configure the plugin
 
 == Frequently Asked Questions ==
 
@@ -28,7 +28,7 @@ Embed an interactive map.
 
 One or more widgets can be displayed within one or more sidebars:
 
-1. Locate the widget: Appearance > Widgets > *DTRT WP Map Widget*
+1. Locate the widget: Appearance > Widgets > *DTRT Map Widget*
 2. Drag and drop the widget into one of your sidebars
 3. Add a *Title*
 4. Specify options

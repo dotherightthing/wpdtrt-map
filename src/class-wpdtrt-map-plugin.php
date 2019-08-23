@@ -1,27 +1,31 @@
 <?php
 /**
+ * File: src/class-wpdtrt-map-plugin.php
+ *
  * Plugin sub class.
  *
- * @package wpdtrt_map
- * @version 0.1.0
- * @since   0.8.3 DTRT WordPress Plugin Boilerplate Generator
+ * Since:
+ *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
+ *
+ * @package WPDTRT_Map
  */
 
 /**
- * Extend the base class to inherit boilerplate functionality.
- * Adds application-specific methods.
+ * Class: WPDTRT_Map_Plugin
  *
- * @since   1.0.0
- * @version 1.0.0
+ * Extend the base class to inherit boilerplate functionality.
+ *
+ * Adds application-specific methods.
  */
 class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_6\Plugin {
 
 	/**
+	 * Function: __construct
+	 *
 	 * Supplement plugin initialisation.
 	 *
-	 * @param     array $options Plugin options.
-	 * @since     1.0.0
-	 * @version   1.1.0
+	 * Parameters:
+	 *   (array) $options - Plugin options.
 	 */
 	public function __construct( $options ) {
 
@@ -30,20 +34,24 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
-	 * ====== WordPress Integration ======
+	 * Group: WordPress Integration
+	 * _____________________________________
 	 */
 
 	/**
+	 * Function: wp_setup
+	 *
 	 * Supplement plugin's WordPress setup.
+	 *
 	 * Note: Default priority is 10. A higher priority runs later.
 	 *
-	 * @see https://codex.wordpress.org/Plugin_API/Action_Reference Action order
+	 * See: https://codex.wordpress.org/Plugin_API/Action_Reference Action order
 	 */
 	protected function wp_setup() {
 
 		parent::wp_setup();
 
-		// add actions and filters here.
+		// About: add actions and filters here.
 		add_action( 'wp_head', [ $this, 'render_css_head' ] );
 		add_action( 'wp_head', [ $this, 'render_js_head' ] );
 		add_action( 'admin_head', [ $this, 'render_css_head' ] );
@@ -53,15 +61,17 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
-	 * ====== Getters and Setters ======
+	 * Group: Getters and Setters
+	 * _____________________________________
 	 */
 
 	/**
-	 * Get the real acf_map field, or the mock_acf_map for the settings page
+	 * Function: get_acf_map
 	 *
-	 * @return $acf_map
+	 * Get the real acf_map field, or the mock_acf_map for the settings page.
 	 *
-	 * @todo limit output to settings page (https://github.com/dotherightthing/wpdtrt-plugin/issues/91)
+	 * Returns:
+	 *   (object) $acf_map - The field object
 	 */
 	public function get_acf_map() {
 
@@ -99,16 +109,22 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
+	 * Function: get_featured_image_latlng
+	 *
 	 * Get the latitude and longitude from a post's/page's featured image.
 	 * to obtain a historical forecast for this location.
 	 *
-	 * @since       0.1.0
-	 * @version     1.0.0
-	 * @param       object $post Post object.
-	 * @return      array ('latitude', 'longitude')
+	 * Parameters:
+	 *   (object) $post - Post object.
 	 *
-	 * @uses https://github.com/dotherightthing/wpdtrt-exif
-	 * @see  https://github.com/dotherightthing/wpdtrt-weather
+	 * Returns:
+	 *   (array) - ['latitude', 'longitude']
+	 *
+	 * Uses:
+	 *   <https://github.com/dotherightthing/wpdtrt-exif>
+	 *
+	 * See:
+	 *   <https://github.com/dotherightthing/wpdtrt-weather>
 	 */
 	public function get_featured_image_latlng( $post ) {
 
@@ -141,15 +157,23 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
-	 * Register API key with ACF renderer
+	 * Function: set_acf_google_map_api_key
 	 *
-	 * @param object $api ACF Google Map API field object.
-	 * @return $api
+	 * Register API key with ACF renderer.
 	 *
-	 * @see https://www.advancedcustomfields.com/resources/google-map/
+	 * Parameters:
+	 *   (object) $api - ACF Google Map API field object.
 	 *
-	 * @example
-	 *  add_filter('acf/fields/google_map/api', [$this, 'set_acf_google_map_api_key']);
+	 * Returns:
+	 *   (object) $api - ACF Google Map API field object.
+	 *
+	 * See:
+	 *   <https://www.advancedcustomfields.com/resources/google-map/>
+	 *
+	 * Example:
+	 * --- PHP
+	 * add_filter('acf/fields/google_map/api', [$this, 'set_acf_google_map_api_key']);
+	 * ---
 	 */
 	public function set_acf_google_map_api_key( $api ) {
 
@@ -161,11 +185,13 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
-	 * Register backend field groups with ACF renderer
-	 *  Custom Fields > Tools > Export Field Groups > Generate export code
-	 *  Note: ACF admin menu is toggled on/off in wpdtrt/library/acf.php.
+	 * Function: set_acf_field_groups
 	 *
-	 * @todo Add support for dynamic custom post types (#8)
+	 * Register backend field groups with ACF renderer
+	 *
+	 * Custom Fields > Tools > Export Field Groups > Generate export code
+	 *
+	 * Note: ACF admin menu is toggled on/off in wpdtrt/library/acf.php.
 	 */
 	public function set_acf_field_groups() {
 
@@ -230,23 +256,19 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
-	 * ===== Renderers =====
+	 * Group: Renderers
+	 * _____________________________________
 	 */
 
 	/**
+	 * Function: render_css_head
+	 *
 	 * Load CSS in page head
 	 *
-	 * Functions wp_enqueue_scripts + enqueue_style can't be used here
-	 * as SRI integrity metadata isn't currently supported by WP
-	 * Subresource Integrity Hashes "defines a mechanism by which user agents may verify
-	 *  that a fetched resource has been delivered without unexpected manipulation."
-	 *
-	 * @see https://www.w3.org/TR/SRI/
-	 * @see https://core.trac.wordpress.org/ticket/22249
-	 * @see https://github.com/dotherightthing/wpdtrt-plugin/issues/78
-	 *
-	 * @example
-	 *  add_action( 'wp_head', [$this, 'render_css_head'] );
+	 * Example:
+	 * --- PHP
+	 * add_action( 'wp_head', [$this, 'render_css_head'] );
+	 * --
 	 */
 	public function render_css_head() {
 
@@ -269,17 +291,9 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
-	 * Load JS in page head
+	 * Function: render_js_head
 	 *
-	 * Functions wp_enqueue_scripts + wp_enqueue_script can't be used here
-	 * as SRI integrity metadata isn't currently supported by WP
-	 * Subresource Integrity Hashes "defines a mechanism by which user agents may verify
-	 *  that a fetched resource has been delivered without unexpected manipulation."
-	 *
-	 * @see https://www.w3.org/TR/SRI/
-	 * @see https://core.trac.wordpress.org/ticket/22249
-	 * @see https://www.advancedcustomfields.com/resources/google-map/
-	 * @todo Can this resource be pulled without sending the SRI attributes, as jQuery also uses SRI now
+	 * Load JS in page head.
 	 */
 	public function render_js_head() {
 
@@ -318,10 +332,12 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	}
 
 	/**
-	 * ===== Filters =====
+	 * Group: Filters
+	 * _____________________________________
 	 */
 
 	/**
-	 * ===== Helpers =====
+	 * Group: Helpers
+	 * _____________________________________
 	 */
 }
