@@ -310,6 +310,7 @@ function wpdtrt_map_plugin_init() {
 		'options_form_title'          => __( 'General Settings', 'wpdtrt-map' ),
 		'loading'                     => __( 'Loading latest data...', 'wpdtrt-map' ),
 		'success'                     => __( 'settings successfully updated', 'wpdtrt-map' ),
+		'mapbox_api_token_warning'    => __( 'Mapbox token not specified', 'wpdtrt-map' ),
 	);
 
 	/**
