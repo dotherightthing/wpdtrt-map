@@ -19,20 +19,19 @@
         "wiki": "https://github.com/dotherightthing/wpdtrt-map/wiki"
     },
     "require": {
-        "dotherightthing/wpdtrt-plugin-boilerplate": "^1.5.10"
+        "dotherightthing/wpdtrt-plugin-boilerplate": "^1.6.7"
     },
     "require-dev": {
         "dotherightthing/wpdtrt-exif": "^0.2.2",
         "wpackagist-plugin/advanced-custom-fields": "5.6.*",
         "prairiewest/phpconvertdmstodecimal": "dev-master",
-        "phpdocumentor/phpdocumentor": "2.9.0",
         "phpunit/phpunit": "^7.5.14",
         "psy/psysh" : "~0.6",
         "wp-cli/wp-cli" : "~0.22",
         "wp-coding-standards/wpcs": "^0.14.1",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
     },
-    "extras": {
+    "extra": {
         "require-wp": [
             {
                 "name": "DTRT EXIF",

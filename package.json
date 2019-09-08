@@ -3,6 +3,12 @@
   "name": "wpdtrt-map",
   "version": "0.3.6",
   "description": "Embed an interactive map.",
+  "keywords": [
+    "map",
+    "leafletjs",
+    "location",
+    "geotag"
+  ],
   "main": "wpdtrt-map.php",
   "person": {
     "name": "Dan Smith",
@@ -19,38 +25,19 @@
   "bugs": {
     "url": "https://github.com/dotherightthing/wpdtrt-map/issues"
   },
-  "keywords": [
-    "map",
-    "leafletjs",
-    "location",
-    "geotag"
-  ],
-  "devDependencies": {
-    "cypress": "^3.4.1",
-    "eslint": "^6.2.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-chai-friendly": "^0.4.1",
-    "eslint-plugin-compat": "^3.3.0",
-    "eslint-plugin-cypress": "^2.0.1",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-json": "^1.4.0",
-    "eslint-plugin-markdown": "^1.0.0",
-    "gulp": "^3.9.1",
-    "normalize-html-whitespace": "^0.2.0",
-    "tenon-node": "^0.4.1"
-  },
   "workspaces": [
     "vendor/dotherightthing/wpdtrt-plugin-boilerplate/"
   ],
   "scripts": {
-    "build": "gulp --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./",
-    "dependencies": "gulp dependencies --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./",
-    "docs": "gulp docs --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./",
-    "lint": "gulp lint --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./",
-    "release": "gulp release --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./",
-    "tests": "gulp tests --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./ && cypress open",
-    "version": "gulp version --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./",
-    "watch": "gulp compile --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./ && gulp watch --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./"
+    "build": "./node_modules/.bin/gulp --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./",
+    "dependencies": "./node_modules/.bin/gulp dependencies --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./",
+    "docs": "./node_modules/.bin/gulp docs --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./",
+    "installplugin": "./install.sh",
+    "lint": "./node_modules/.bin/gulp lint --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./",
+    "release": "./node_modules/.bin/gulp release --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./",
+    "test": "./node_modules/.bin/gulp test --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./ && cypress open",
+    "version": "./node_modules/.bin/gulp version --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./",
+    "watch": "./node_modules/.bin/gulp compile --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./ && gulp watch --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile-loader.js --cwd ./"
   },
   "repository": {
     "type": "git",

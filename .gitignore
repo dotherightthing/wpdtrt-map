@@ -2,13 +2,16 @@
 .yo-rc.json
 composer.phar
 config/naturaldocs/Working Data
+Natural Docs
 css
-docs
+docs/*
+!docs/README.md
 generators
 js/*-es5.js
 logs
 node_modules
 release.zip
+*.code-workspace
 *sublime-*
 vendor
 wp-content

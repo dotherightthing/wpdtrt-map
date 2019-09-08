@@ -1,29 +1,33 @@
 <?php
 /**
+ * File: src/class-wpdtrt-map-widget.php
+ *
  * Widget sub class.
  *
  * Since:
- *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
- *
- * @package WPDTRT_Map
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
 
 /**
  * Class: WPDTRT_Map_Widget
  *
- * Extend the base class to inherit boilerplate functionality.
+ * Extends the base class to inherit boilerplate functionality, adds application-specific methods.
  *
- * Adds application-specific methods.
+ * Since:
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
-class WPDTRT_Map_Widget extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_6\Widget {
+class WPDTRT_Map_Widget extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_7\Widget {
 
 	/**
-	 * Function: __construct
+	 * Constructor: __construct
 	 *
 	 * Supplement widget initialisation.
 	 *
 	 * Parameters:
-	 *   (array) $options - Widget options.
+	 *   $options - Widget options
+	 *
+	 * Since:
+	 *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 	 */
 	public function __construct( $options ) {
 

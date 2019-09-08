@@ -1,47 +1,41 @@
 <?php
 /**
- * Unit tests, using PHPUnit, wp-cli, WP_UnitTestCase
+ * File: tests/test-wpdtrt-map.php
  *
- * The plugin is 'active' within a WP test environment
- *  so the plugin class has already been instantiated
- *  with the options set in wpdtrt-gallery.php
+ * Unit tests, using PHPUnit, wp-cli, WP_UnitTestCase.
  *
- * Only function names prepended with test_ are run.
- * $debug logs are output with the test output in Terminal
- * A failed assertion may obscure other failed assertions in the same test.
+ * Note:
+ * - The plugin is 'active' within a WP test environment
+ *   so the plugin class has already been instantiated
+ *   with the options set in wpdtrt-map.php
+ * - Only function names prepended with test_ are run.
+ * - $debug logs are output with the test output in Terminal
+ * - A failed assertion may obscure other failed assertions in the same test.
+ *
+ * See:
+ * - <https://github.com/dotherightthing/wpdtrt-plugin-boilerplate/wiki/Testing-&-Debugging#testing>
  *
  * Since:
- *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
- *
- * @package WPDTRT_Map
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
 
 /**
- * WP_UnitTestCase unit tests for wpdtrt_map
+ * Class: WPDTRT_MapTest
+ *
+ * WP_UnitTestCase unit tests for wpdtrt_map.
  */
 class WPDTRT_MapTest extends WP_UnitTestCase {
 
 	/**
-	 * Compare two HTML fragments.
-	 *
-	 * @param string $expected Expected value.
-	 * @param string $actual Actual value.
-	 * @param string $error_message Message to show when strings don't match.
-	 * @uses https://stackoverflow.com/a/26727310/6850747
+	 * Group: Lifecycle Events
+	 * _____________________________________
 	 */
-	protected function assertEqualHtml( $expected, $actual, $error_message ) {
-		$from = [ '/\>[^\S ]+/s', '/[^\S ]+\</s', '/(\s)+/s', '/> </s' ];
-		$to   = [ '>', '<', '\\1', '><' ];
-		$this->assertEquals(
-			preg_replace( $from, $to, $expected ),
-			preg_replace( $from, $to, $actual ),
-			$error_message
-		);
-	}
 
 	/**
-	 * SetUp
-	 * Automatically called by PHPUnit before each test method is run
+	 * Method: setUp
+	 *
+	 * SetUp,
+	 * automatically called by PHPUnit before each test method is run.
 	 */
 	public function setUp() {
 		// Make the factory objects available.
@@ -54,10 +48,13 @@ class WPDTRT_MapTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * TearDown
-	 * Automatically called by PHPUnit after each test method is run
+	 * Method: tearDown
 	 *
-	 * @see https://codesymphony.co/writing-wordpress-plugin-unit-tests/#object-factories
+	 * TearDown,
+	 * automatically called by PHPUnit after each test method is run.
+	 *
+	 * See:
+	 * - <https://codesymphony.co/writing-wordpress-plugin-unit-tests/#object-factories>
 	 */
 	public function tearDown() {
 
@@ -67,13 +64,48 @@ class WPDTRT_MapTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Create post
+	 * Group: Helpers
+	 * _____________________________________
+	 */
+
+	/**
+	 * Method: assertEqualHtml
 	 *
-	 * @param array $options Post options (post_title, post_date, post_content).
-	 * @return number $post_id
-	 * @see https://developer.wordpress.org/reference/functions/wp_insert_post/
-	 * @see https://wordpress.stackexchange.com/questions/37163/proper-formatting-of-post-date-for-wp-insert-post
-	 * @see https://codex.wordpress.org/Function_Reference/wp_update_post
+	 * Compare two HTML fragments.
+	 *
+	 * Parameters:
+	 *   $expected - Expected value.
+	 *   $actual - Actual value.
+	 *   $error_message - Message to show when strings don't match.
+	 *
+	 * Uses:
+	 *   <https://stackoverflow.com/a/26727310/6850747>
+	 */
+	protected function assertEqualHtml( string $expected, string $actual, string $error_message ) {
+		$from = [ '/\>[^\S ]+/s', '/[^\S ]+\</s', '/(\s)+/s', '/> </s' ];
+		$to   = [ '>', '<', '\\1', '><' ];
+		$this->assertEquals(
+			preg_replace( $from, $to, $expected ),
+			preg_replace( $from, $to, $actual ),
+			$error_message
+		);
+	}
+
+	/**
+	 * Method: create_post
+	 *
+	 * Create post.
+	 *
+	 * Parameters:
+	 *   $options - Post options
+	 *
+	 * Returns:
+	 *   $post_id - Post ID
+	 *
+	 * See:
+	 * - <https://developer.wordpress.org/reference/functions/wp_insert_post/>
+	 * - <https://wordpress.stackexchange.com/questions/37163/proper-formatting-of-post-date-for-wp-insert-post>
+	 * - <https://codex.wordpress.org/Function_Reference/wp_update_post>
 	 */
 	public function create_post( $options ) {
 
@@ -84,22 +116,97 @@ class WPDTRT_MapTest extends WP_UnitTestCase {
 		extract( $options, EXTR_IF_EXISTS );
 
 		$post_id = $this->factory->post->create([
-			'post_title' => $post_title,
-			'post_date' => $post_date,
+			'post_title'   => $post_title,
+			'post_date'    => $post_date,
 			'post_content' => $post_content,
-			'post_type' => 'post',
-			'post_status' => 'publish',
+			'post_type'    => 'post',
+			'post_status'  => 'publish',
 		]);
 
 		return $post_id;
 	}
 
 	/**
-	 * ===== Tests =====
+	 * Method: tenon
+	 *
+	 * Lint page state in Tenon.io (proof of concept).
+	 *
+	 * Parameters:
+	 *   $url_or_src - Page URL or post-JS DOM source
+	 *
+	 * Returns:
+	 *   $result - Tenon resultSet, or WP error
+	 *
+	 * TODO:
+	 * - Waiting on Tenon Tunnel to expose WPUnit environment to Tenon API
+	 *
+	 * See:
+	 * - <Tenon - Roadmap at 12/2015: https://blog.tenon.io/tenon-io-end-of-year-startup-experience-at-9-months-in-product-updates-and-more/>
+	 * - <https://github.com/joedolson/access-monitor/blob/master/src/access-monitor.php>
+	 * - <Tenon - Optional parameters/$args: https://tenon.io/documentation/understanding-request-parameters.php>
+	 *
+	 * Since:
+	 *   1.7.15 - wpdtrt-gallery
+	 */
+	protected function tenon( string $url_or_src ) : array {
+
+		$endpoint = 'https://tenon.io/api/';
+
+		$args = array(
+			'method'  => 'POST',
+			'body'    => array(
+				// Required parameter #1 is passed in by Travis CI.
+				'key'       => getenv( 'TENON_AUTH' ),
+				// Optional parameters:.
+				'level'     => 'AA',
+				'priority'  => 0,
+				'certainty' => 100,
+			),
+			'headers' => '',
+			'timeout' => 60,
+		);
+
+		// Required parameter #2.
+		if ( preg_match( '/^http/', $url_or_src ) ) {
+			$args['body']['url'] = $url_or_src;
+		} else {
+			$args['body']['src'] = $url_or_src;
+			// TODO
+			// this is a quick hack to get something working
+			// in reality we will want to support full pages too.
+			$args['body']['fragment'] = 1; // else 'no title' etc error.
+		}
+
+		$response = wp_remote_post(
+			$endpoint,
+			$args
+		);
+
+		// $body = wp_remote_retrieve_body( $response );.
+		if ( is_wp_error( $response ) ) {
+			$result = $response->errors;
+		} else {
+			/**
+			 * Return the body, not the header
+			 * true = convert to associative array
+			 */
+			$api_response = json_decode( $response['body'], true );
+
+			$result = $api_response['resultSet'];
+		}
+
+		return $result;
+	}
+
+	/**
+	 * Group: Tests
+	 * _____________________________________
 	 */
 
 	/**
-	 * Demo test
+	 * Method: test_placeholder
+	 *
+	 * Demo test.
 	 */
 	public function test_placeholder() {
 

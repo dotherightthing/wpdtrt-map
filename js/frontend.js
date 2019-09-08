@@ -1,23 +1,21 @@
 /**
- * File: frontend.js
- *
- * DTRT Map
+ * File: js/frontend.js
  *
  * Front-end scripting for public pages.
  *
- * PHP variables are provided in `wpdtrt_map_config`.
+ * Note:
+ * - PHP variables are provided in wpdtrt_map_config.
  *
  * Since:
- *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
- *
- * @package WPDTRT_Map
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
 
-/* eslint-env browser */
 /* global jQuery, wpdtrt_map_config */
-/* eslint-disable no-unused-vars */
+/* eslint-disable camelcase */
 
-// eslint-disable-next-line camelcase
+/**
+ * Object: wpdtrt_map_ui
+ */
 const wpdtrt_map_ui = {
 
   /**
@@ -33,9 +31,7 @@ document.addEventListener( 'touchstart', () => {
   // nada, this is just a hack to make :focus state render on touch
 }, false );
 
-jQuery( document ).ready( ( $ ) => {
-  // eslint-disable camelcase
-  const config = wpdtrt_map_config;
+jQuery( document ).ready( ( $ ) => { // eslint-disable-line no-unused-vars
+  const config = wpdtrt_map_config; // eslint-disable-line no-unused-vars
   wpdtrt_map_ui.init();
-  // eslint-enable camelcase
 } );

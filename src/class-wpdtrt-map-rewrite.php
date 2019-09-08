@@ -1,21 +1,19 @@
 <?php
 /**
+ * File: src/class-wpdtrt-map-rewrite.php
+ *
  * Rewrite sub class.
  *
  * Since:
- *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
- *
- * @package WPDTRT_Map
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
 
 /**
  * Class: WPDTRT_Map_Rewrite
  *
- * Extend the base class to inherit boilerplate functionality.
- *
- * Adds application-specific methods.
+ * Extends the base class to inherit boilerplate functionality, adds application-specific methods.
  */
-class WPDTRT_Map_Rewrite extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_6\Rewrite {
+class WPDTRT_Map_Rewrite extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_7\Rewrite {
 
 	/**
 	 * Function: __construct
@@ -23,7 +21,10 @@ class WPDTRT_Map_Rewrite extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5
 	 * Supplement rewrite initialisation.
 	 *
 	 * Parameters:
-	 *   (array) $options - Rewrite options.
+	 *   $options - Rewrite options
+	 *
+	 * Since:
+	 *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 	 */
 	public function __construct( $options ) {
 
@@ -32,34 +33,48 @@ class WPDTRT_Map_Rewrite extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5
 	}
 
 	/**
-	 * ====== WordPress Integration ======
+	 * Group: WordPress Integration
+	 * _____________________________________
 	 */
 
 	/**
-	 * Supplement rewrite's WordPress setup.
-	 * Note: Default priority is 10. A higher priority runs later.
+	 * Function: wp_setup
 	 *
-	 * @see https://codex.wordpress.org/Plugin_API/Action_Reference Action order
+	 * Supplement rewrite's WordPress setup.
+	 *
+	 * Note:
+	 * - Default priority is 10. A higher priority runs later.
+	 *
+	 * See:
+	 * - <Action order: https://codex.wordpress.org/Plugin_API/Action_Reference>
+	 *
+	 * Since:
+	 *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 	 */
 	protected function wp_setup() {
 
-		// edit here.
 		parent::wp_setup();
+
+		// About: add actions and filters here.
 	}
 
 	/**
-	 * ====== Getters and Setters ======
+	 * Group: Getters and Setters
+	 * _____________________________________
 	 */
 
 	/**
-	 * ===== Renderers =====
+	 * Group: Renderers
+	 * _____________________________________
 	 */
 
 	/**
-	 * ===== Filters =====
+	 * Group: Filters
+	 * _____________________________________
 	 */
 
 	/**
-	 * ===== Helpers =====
+	 * Group: Helpers
+	 * _____________________________________
 	 */
 }

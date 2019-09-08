@@ -1,8 +1,11 @@
 <?php
 /**
- * PHPUnit bootstrap file
+ * File: tests/bootstrap.php
  *
- * @package WPDTRT_Map
+ * PHPUnit bootstrap file.
+ *
+ * Since:
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
 
 $_tests_dir = getenv( 'WP_TESTS_DIR' );

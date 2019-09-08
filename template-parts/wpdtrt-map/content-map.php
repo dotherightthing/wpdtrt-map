@@ -1,13 +1,11 @@
 <?php
 /**
- * File: template-parts/wpdtrt-map/content-map.php
+ * File: template-parts/wpdtrt-map/content.php
  *
  * Template to display plugin output in shortcodes and widgets.
  *
  * Since:
- *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
- *
- * @package WPDTRT_Map
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
 
 // Predeclare variables
@@ -31,7 +29,9 @@ $plugin = null;
 $options = get_query_var( 'options' );
 
 // Overwrite variables from array values
-// @link http://kb.network.dan/php/wordpress/extract/.
+//
+// See:
+// <http://kb.network.dan/php/wordpress/extract/>.
 extract( $options, EXTR_IF_EXISTS );
 
 $plugin_options = $plugin->get_plugin_options();
@@ -39,10 +39,11 @@ $plugin_options = $plugin->get_plugin_options();
 /**
  * ACF's Google Map field type supports geocoding
  * so entering an address there will generate
- * latitide and longitude
+ * latitide and longitude.
  *
- * @see https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js
- * @see https://www.advancedcustomfields.com/resources/google-map/
+ * See:
+ * - <https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js>
+ * - <https://www.advancedcustomfields.com/resources/google-map/>
  */
 $acf_map = $plugin->get_acf_map();
 

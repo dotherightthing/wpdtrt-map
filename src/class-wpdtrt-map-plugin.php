@@ -5,27 +5,29 @@
  * Plugin sub class.
  *
  * Since:
- *   DTRT WordPress Plugin Boilerplate Generator 0.8.3
- *
- * @package WPDTRT_Map
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
 
 /**
  * Class: WPDTRT_Map_Plugin
  *
- * Extend the base class to inherit boilerplate functionality.
+ * Extends the base class to inherit boilerplate functionality, adds application-specific methods.
  *
- * Adds application-specific methods.
+ * Since:
+ *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
-class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_6\Plugin {
+class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_7\Plugin {
 
 	/**
-	 * Function: __construct
+	 * Constructor: __construct
 	 *
 	 * Supplement plugin initialisation.
 	 *
 	 * Parameters:
-	 *   (array) $options - Plugin options.
+	 *   $options - Plugin options
+	 *
+	 * Since:
+	 *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 	 */
 	public function __construct( $options ) {
 
@@ -43,9 +45,14 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_5_
 	 *
 	 * Supplement plugin's WordPress setup.
 	 *
-	 * Note: Default priority is 10. A higher priority runs later.
+	 * Note:
+	 * - Default priority is 10. A higher priority runs later.
 	 *
-	 * See: https://codex.wordpress.org/Plugin_API/Action_Reference Action order
+	 * See:
+	 * - <Action order: https://codex.wordpress.org/Plugin_API/Action_Reference>
+	 *
+	 * Since:
+	 *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 	 */
 	protected function wp_setup() {
 
