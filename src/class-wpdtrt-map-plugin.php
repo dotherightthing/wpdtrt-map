@@ -78,28 +78,38 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_
 	 * Get the real acf_map field, or the mock_acf_map for the settings page.
 	 *
 	 * Returns:
-	 *   (object) $acf_map - The field object
+	 *   $acf_map - The field array
 	 */
-	public function get_acf_map() {
+	public function get_acf_map() : array {
 
-		// the map location _was_ 'picked' using the ACF Map field.
-		// $acf_map = get_field('wpdtrt_map_acf_google_map_location').
 		// the post object.
 		global $post;
+		$acf_map = array();
 
-		// it can also be mocked using the demo_shortcode_params.
-		$demo_shortcode_options = $this->get_demo_shortcode_params();
+		// Check for ACF function.
+		if ( function_exists( 'get_field' ) ) {
+			// the map location _was_ 'picked' using the ACF Map field.
+			$acf_latlng = get_field( 'wpdtrt_map_acf_google_map_location' );
+		}
 
 		// get geotag from image.
 		$featured_image_latlng = $this->get_featured_image_latlng( $post );
 
-		if ( 2 === count( $featured_image_latlng ) ) {
+		if ( isset( $acf_latlng ) && ( 3 === count( $acf_latlng ) ) ) {
+			// use ACF map if a location was set using this.
+			$acf_map = $real_acf_map;
+		} elseif ( 2 === count( $featured_image_latlng ) ) {
+			// else use featured image geotag if it exists.
 			$acf_map = array(
 				'address' => __( 'Test 1', 'wpdtrt-map' ),
 				'lat'     => $featured_image_latlng['latitude'],
 				'lng'     => $featured_image_latlng['longitude'],
 			);
 		} else {
+			// else this is just a demo - TODO check if it is
+			// it can also be mocked using the demo_shortcode_params.
+			$demo_shortcode_options = $this->get_demo_shortcode_params();
+
 			// shortcode demo on options page.
 			if ( is_admin() && array_key_exists( 'mock_acf_map', $demo_shortcode_options ) ) {
 				$mock_acf_map = $demo_shortcode_options['mock_acf_map'];
