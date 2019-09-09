@@ -33,5 +33,5 @@ document.addEventListener( 'touchstart', () => {
 
 jQuery( document ).ready( ( $ ) => { // eslint-disable-line no-unused-vars
   const config = wpdtrt_map_config; // eslint-disable-line no-unused-vars
-  wpdtrt_map_ui.init();
+  // wpdtrt_map_ui.init();
 } );
