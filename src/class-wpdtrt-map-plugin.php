@@ -97,7 +97,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_
 
 		if ( isset( $acf_latlng ) && ( 3 === count( $acf_latlng ) ) ) {
 			// use ACF map if a location was set using this.
-			$acf_map = $real_acf_map;
+			$acf_map = $acf_latlng;
 		} elseif ( 2 === count( $featured_image_latlng ) ) {
 			// else use featured image geotag if it exists.
 			$acf_map = array(
