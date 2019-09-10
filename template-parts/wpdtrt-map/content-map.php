@@ -21,6 +21,7 @@ $after_widget  = null; // register_sidebar.
 // shortcode options.
 $enlargement_link_text = null;
 $unique_id             = null;
+$zoom_level            = null;
 
 // access to plugin.
 $plugin = null;
@@ -33,6 +34,34 @@ $options = get_query_var( 'options' );
 // See:
 // <http://kb.network.dan/php/wordpress/extract/>.
 extract( $options, EXTR_IF_EXISTS );
+
+/**
+ * Function: get_shortcode_option_as_string
+ *
+ * If the parameter is not supplied with the shortcode,
+ * then use the 'default' key from the $instance_options array.
+ *
+ * Parameters:
+ *   $option - the shortcode option
+ *
+ * Returns:
+ *   $option - the option as a string
+ *
+ * TODO:
+ * - move this to boilerplate and use it to process
+ *   all non-widget incoming $options
+ */
+function get_shortcode_option_as_string( $option ) : string {
+	if ( is_array( $option ) ) {
+		$option = $option['default'];
+	}
+
+	return $option;
+}
+
+$enlargement_link_text = get_shortcode_option_as_string( $enlargement_link_text );
+$unique_id             = get_shortcode_option_as_string( $unique_id );
+$zoom_level            = get_shortcode_option_as_string( $zoom_level );
 
 $plugin_options = $plugin->get_plugin_options();
 
@@ -80,7 +109,9 @@ echo $before_title . $title . $after_title;
 	<script>
 		var wpdtrt_map_<?php echo $unique_id; ?> = L.map('wpdtrt-map-<?php echo $unique_id; ?>', {
 			zoomControl: false
-		}).setView([<?php echo $coordinates; ?>], 16);
+		})
+		.setView([<?php echo $coordinates; ?>], 16)
+		.setZoom([<?php echo $zoom_level; ?>]);
 
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -101,10 +132,10 @@ echo $before_title . $title . $after_title;
 				div.innerHTML = '<?php echo $address; ?>';
 			return div;
 		};
+		legend.addTo(wpdtrt_map_<?php echo $unique_id; ?>);
 		*/
 
-		legend.addTo(wpdtrt_map_<?php echo $unique_id; ?>);
-		// https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/
+		// https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/.
 		new L.Control.Zoom({ position: 'bottomleft' }).addTo(wpdtrt_map_<?php echo $unique_id; ?>);
 	</script>
 <?php endif; ?>

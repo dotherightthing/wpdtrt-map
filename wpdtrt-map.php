@@ -276,16 +276,25 @@ function wpdtrt_map_plugin_init() {
 	 */
 	$instance_options = array(
 		'unique_id'             => array(
-			'type'  => 'number',
-			'size'  => 3,
-			'label' => __( 'Unique ID', 'wpdtrt-map' ),
-			'tip'   => __( 'To prevent conflicts between maps on the same page', 'wpdtrt-map' ),
+			'type'    => 'number',
+			'size'    => 3,
+			'label'   => __( 'Unique ID', 'wpdtrt-map' ),
+			'tip'     => __( 'To prevent conflicts between maps on the same page', 'wpdtrt-map' ),
+			'default' => 1,
 		),
 		'enlargement_link_text' => array(
-			'type'  => 'text',
-			'size'  => 30,
-			'label' => __( 'Enlargement link text', 'wpdtrt-map' ),
-			'tip'   => __( 'e.g. View larger map', 'wpdtrt-map' ),
+			'type'    => 'text',
+			'size'    => 30,
+			'label'   => __( 'Enlargement link text', 'wpdtrt-map' ),
+			'tip'     => __( 'e.g. View larger map', 'wpdtrt-map' ),
+			'default' => __( 'View in Google Maps', 'wpdtrt-map' ),
+		),
+		'zoom_level'            => array(
+			'type'    => 'number',
+			'size'    => 1,
+			'label'   => __( 'Zoom level', 'wpdtrt-map' ),
+			'tip'     => __( 'A larger value zooms in further', 'wpdtrt-map' ),
+			'default' => 4,
 		),
 	);
 
@@ -331,6 +340,7 @@ function wpdtrt_map_plugin_init() {
 			'lat'     => '-41.3264776',
 			'lng'     => '174.83712689999993',
 		),
+		'zoom_level'            => 4,
 	);
 
 	/**
@@ -386,6 +396,7 @@ function wpdtrt_map_shortcode_init() {
 			'selected_instance_options' => array(
 				'unique_id',
 				'enlargement_link_text',
+				'zoom_level',
 			),
 		)
 	);
@@ -445,6 +456,7 @@ function wpdtrt_map_widget_init() {
 			'selected_instance_options' => array(
 				'unique_id',
 				'enlargement_link_text',
+				'zoom_level',
 			),
 		)
 	);
