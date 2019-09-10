@@ -35,34 +35,6 @@ $options = get_query_var( 'options' );
 // <http://kb.network.dan/php/wordpress/extract/>.
 extract( $options, EXTR_IF_EXISTS );
 
-/**
- * Function: get_shortcode_option_as_string
- *
- * If the parameter is not supplied with the shortcode,
- * then use the 'default' key from the $instance_options array.
- *
- * Parameters:
- *   $option - the shortcode option
- *
- * Returns:
- *   $option - the option as a string
- *
- * TODO:
- * - move this to boilerplate and use it to process
- *   all non-widget incoming $options
- */
-function get_shortcode_option_as_string( $option ) : string {
-	if ( is_array( $option ) ) {
-		$option = $option['default'];
-	}
-
-	return $option;
-}
-
-$enlargement_link_text = get_shortcode_option_as_string( $enlargement_link_text );
-$unique_id             = get_shortcode_option_as_string( $unique_id );
-$zoom_level            = get_shortcode_option_as_string( $zoom_level );
-
 $plugin_options = $plugin->get_plugin_options();
 
 /**
