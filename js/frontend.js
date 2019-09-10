@@ -11,7 +11,7 @@
  */
 
 /* global jQuery, wpdtrt_map_config */
-/* eslint-disable camelcase */
+/* eslint-disable camelcase, no-unused-vars */
 
 /**
  * Object: wpdtrt_map_ui
@@ -31,7 +31,7 @@ document.addEventListener( 'touchstart', () => {
   // nada, this is just a hack to make :focus state render on touch
 }, false );
 
-jQuery( document ).ready( ( $ ) => { // eslint-disable-line no-unused-vars
-  const config = wpdtrt_map_config; // eslint-disable-line no-unused-vars
+jQuery( document ).ready( ( $ ) => {
+  const config = wpdtrt_map_config;
   // wpdtrt_map_ui.init();
 } );
