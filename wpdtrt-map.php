@@ -287,7 +287,7 @@ function wpdtrt_map_plugin_init() {
 			'size'    => 30,
 			'label'   => __( 'Enlargement link text', 'wpdtrt-map' ),
 			'tip'     => __( 'e.g. View larger map', 'wpdtrt-map' ),
-			'default' => __( 'View in Google Maps', 'wpdtrt-map' ),
+			'default' => __( 'View on Google Maps', 'wpdtrt-map' ),
 		),
 		'zoom_level'            => array(
 			'type'    => 'number',
