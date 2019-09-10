@@ -49,14 +49,14 @@ $plugin_options = $plugin->get_plugin_options();
 $acf_map = $plugin->get_acf_map();
 
 if ( $acf_map ) {
+	// TODO: address is currently just a placeholder.
 	$address     = $acf_map['address'];
 	$coordinates = $acf_map['lat'] . ',' . $acf_map['lng'];
+	$static_coordinates = $acf_map['lng'] . ',' . $acf_map['lat'];
 }
 
 // https://www.mapbox.com/studio/account/tokens/.
 $mapbox_api_token = $plugin_options['mapbox_api_token']['value'];
-
-$zoom = 4;
 
 // load the data
 // $plugin->get_api_data();
@@ -65,12 +65,18 @@ $zoom = 4;
 // WordPress widget options (not output with shortcode).
 echo $before_widget;
 echo $before_title . $title . $after_title;
+
 ?>
 
 <?php if ( $acf_map ) : ?>
 	<div class="wpdtrt-map">
 		<div id="wpdtrt-map-<?php echo $unique_id; ?>" class="wpdtrt-map-embed">
-			<img alt="" src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/<?php echo $coordinates; ?>,<?php echo $zoom; ?>,0,0/300x300@2x?access_token=<?php echo $mapbox_api_token; ?>">
+			<noscript>
+				<img
+					alt="Map showing the co-ordinates <?php echo $static_coordinates; ?>. "
+					src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/<?php echo $static_coordinates; ?>,<?php echo $zoom_level; ?>,0,0/300x300@2x?access_token=<?php echo $mapbox_api_token; ?>"
+				>
+			</noscript>
 		</div>
 		<?php if ( '' !== $enlargement_link_text ) : ?>
 		<p class="wpdtrt-map-link">
