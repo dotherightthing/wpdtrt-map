@@ -320,13 +320,15 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_
 			return;
 		}
 
-		$plugin_options = $this->get_plugin_options();
-		$messages       = $this->get_messages();
-
-		// https://www.mapbox.com/studio/account/tokens/.
-		$mapbox_api_token         = $plugin_options['mapbox_api_token']['value'];
+		$plugin_options           = $this->get_plugin_options();
+		$messages                 = $this->get_messages();
 		$mapbox_api_token_warning = $messages['mapbox_api_token_warning'];
 		$script                   = '';
+
+		// https://www.mapbox.com/studio/account/tokens/.
+		if ( array_key_exists( 'value', $plugin_options['mapbox_api_token'] ) ) {
+			$mapbox_api_token = $plugin_options['mapbox_api_token']['value'];
+		}
 
 		if ( isset( $mapbox_api_token ) && ( '' !== $mapbox_api_token ) ) {
 			// "Include Leaflet JavaScript file after Leaflet’s CSS".
@@ -335,13 +337,12 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_
 			$script .= ' src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"';
 			$script .= ' integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="';
 			$script .= ' crossorigin=""';
+			$script .= ' id="wpdtrt-map"';
 			$script .= '>';
 			$script .= '</script>';
 		} else {
-			$script .= '<script>';
-			$script .= 'jQuery(window).on("load", function() {';
-			$script .= 'jQuery(".wpdtrt-map-embed").append("<p>' . $mapbox_api_token_warning . '</p>");';
-			$script .= '});';
+			$script .= '<script id="wpdtrt-map">';
+			$script .= 'console.warn( "wpdtrt-map: ' . $mapbox_api_token_warning . '" );';
 			$script .= '</script>';
 		}
 
