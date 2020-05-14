@@ -62,7 +62,7 @@ if ( ! defined( 'WPDTRT_MAP_VERSION' ) ) {
 	 * $plugin_data = get_plugin_data( __FILE__ ); $plugin_version = $plugin_data['Version'];
 	 * ---
 	 */
-	define( 'WPDTRT_MAP_VERSION', '0.1.0' );
+	define( 'WPDTRT_MAP_VERSION', '0.3.6' );
 }
 
 if ( ! defined( 'WPDTRT_MAP_PATH' ) ) {
