@@ -251,11 +251,12 @@ function wpdtrt_map_plugin_init() {
 	 */
 	$plugin_options = array(
 		// Google Maps is used to render the ACF location picker.
+		// See https://www.advancedcustomfields.com/resources/google-map/.
 		'google_javascript_maps_api_key' => array(
 			'type'  => 'password',
-			'label' => __( 'Google JavaScript Maps API Key', 'wpdtrt-map' ),
+			'label' => __( 'Google Cloud Platform API key', 'wpdtrt-map' ),
 			'size'  => 50,
-			'tip'   => __( 'https://developers.google.com/maps/documentation/javascript/get-api-key', 'wpdtrt-map' ),
+			'tip'   => __( 'https://console.cloud.google.com/apis/credentials, https://console.cloud.google.com/apis/library (Maps JavaScript API, Geocoding API and Places API', 'wpdtrt-map' ),
 		),
 		// Mapbox is used to render the map embed.
 		'mapbox_api_token'               => array(
