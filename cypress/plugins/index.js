@@ -46,7 +46,7 @@ module.exports = (on) => {
         /**
          * @summary Lint an HTML fragment in Tenon
          * @param {string} selectorHtml - HTML fragment
-         * @returns Tenon response object
+         * @returns {object} Tenon response object
          *
          * @see tenonCommands: https://github.com/poorgeek/tenon-selenium-example/blob/master/test/helpers/tenonCommands.js
          * @see tenon-node: https://www.npmjs.com/package/tenon-node
