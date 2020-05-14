@@ -43,6 +43,7 @@
     .leaflet-bottom {
         &.leaflet-left {
             .leaflet-control-zoom {
+                /* stylelint-disable-next-line declaration-no-important */
                 bottom: 30px !important; // an extra 10px allows for the missing .mapbox-logo.leaflet-control
             }
         }
@@ -56,7 +57,7 @@
                 width: 26px; // match Godaddy
                 height: 26px; // match Godaddy
                 font-size: 16px; // match Godaddy which uses mapbox icons instead
-                line-height: 23px; // vertically center     
+                line-height: 23px; // vertically center
             }
         }
 

@@ -16,7 +16,7 @@
  * Since:
  *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
  */
-class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_8\Plugin {
+class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_11\Plugin {
 
 	/**
 	 * Constructor: __construct
@@ -194,9 +194,14 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_6_
 	 */
 	public function set_acf_google_map_api_key( $api ) {
 
+		$key            = '';
 		$plugin_options = $this->get_plugin_options();
 
-		$api['key'] = $plugin_options['google_javascript_maps_api_key']['value'];
+		if ( array_key_exists( 'value', $plugin_options['google_javascript_maps_api_key'] ) ) {
+			$key = $plugin_options['google_javascript_maps_api_key']['value'];
+		}
+
+		$api['key'] = $key;
 
 		return $api;
 	}
