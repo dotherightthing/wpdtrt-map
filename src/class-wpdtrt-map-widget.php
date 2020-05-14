@@ -29,9 +29,9 @@ class WPDTRT_Map_Widget extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 	 * Since:
 	 *   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 	 */
-	public function __construct( $options ) {
+	public function __construct( $options ) { // phpcs:disable
 
 		// edit here.
-		parent::__construct( $options );
+		parent::__construct( $options ); // phpcs:disable
 	}
 }
