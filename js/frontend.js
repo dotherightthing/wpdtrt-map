@@ -9,15 +9,17 @@
 /* eslint-disable camelcase, no-unused-vars */
 
 /**
- * Object: wpdtrt_map_ui
+ * Object: wpdtrtMapUi
  */
-const wpdtrt_map_ui = {
+const wpdtrtMapUi = {
 
     /**
      * @function init
      * @summary Initialise front-end scripting.
      */
-    // init: () => {}
+    init: () => {
+        console.log('wpdtrtMapUi.init'); // eslint-disable-line no-console
+    }
 };
 
 // http://stackoverflow.com/a/28771425
@@ -26,6 +28,6 @@ document.addEventListener('touchstart', () => {
 }, false);
 
 jQuery(document).ready(($) => {
-    const config = wpdtrt_map_config;
-    // wpdtrt_map_ui.init();
+    const config = wpdtrt_map_config; // eslint-disable-line
+    wpdtrtMapUi.init();
 });
