@@ -6,7 +6,7 @@ Tags: map, leafletjs, location, geotag
 Requires at least: 4.9.5
 Tested up to: 4.9.5
 Requires PHP: 7.2.20
-Stable tag: 0.3.6
+Stable tag: 0.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,38 +24,7 @@ Embed an interactive map.
 
 == Frequently Asked Questions ==
 
-= How do I use the widget? =
-
-One or more widgets can be displayed within one or more sidebars:
-
-1. Locate the widget: Appearance > Widgets > *DTRT Map Widget*
-2. Drag and drop the widget into one of your sidebars
-3. Add a *Title*
-4. Specify options
-
-= How do I embed a map? =
-
-A) Specify a map location:
-
-1. On a *Page*,
-2. Locate the *DTRT Map* metabox
-3. Search for a location
-4. *Publish*/*Update*
-
-B) Use the provided shortcode to embed a map:
-
-```
-<!-- within the editor -->
-[wpdtrt_map_shortcode option="value"]
-
-// in a PHP template, as a template tag
-<?php echo do_shortcode( '[wpdtrt_map_shortcode option="value"]' ); ?>
-```
-
-C) Shortcode options:
-
-1. `unique_id="1"` (default) - a unique ID to prevent embed conflicts
-2. `enlargement_link_text="View Larger Map"` (default) - optionally display a link to the map at the bottom of the embed
+See [WordPress Usage](README.md#wordpress-usage).
 
 == Screenshots ==
 
@@ -63,6 +32,23 @@ C) Shortcode options:
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.3.7 =
+* Optimise breakpoints
+* Update dependencies
+* Linting fixes, expose config, output console log on init
+* Replace gulp with wpdtrt-npm-scripts
+* Update links to Google APIs (#14)
+* Add id to script tag, output console warning if mapbox token not specified in wp-admin
+* Add/improve Cypress tests
+* Fix static map location
+* Move shortcode option default logic to wpdtrt-plugin-boilerplate
+* Add zoom level; add default settings to instance options, so that these can be output rather than the array describing the input field
+* Fix ACF map reference
+* Add missing warning message
+* Output ACF map if specified, else use image geotag if it exists
+* Sync with DTRT WordPress Plugin Boilerplate Generator 0.8.13 + DTRT WordPress Plugin Boilerplate 1.7.0
+* Fix package name, migrate from PHPDoc to Natural Docs, update PHPUnit
 
 = 0.3.6 =
 * Use lowercase for Composer dependencies
