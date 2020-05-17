@@ -25,13 +25,15 @@ Please read the [WordPress readme.txt](readme.txt).
 
 #### B) Use the provided shortcode to embed a map
 
-```php
-<!-- within the editor -->
+Within the editor:
+
+```txt
 [wpdtrt_map_shortcode option="value"]
 ```
 
+In a PHP template, as a template tag:
+
 ```php
-// in a PHP template, as a template tag
 <?php
     echo do_shortcode( '[wpdtrt_map_shortcode option="value"]' );
 ?>
