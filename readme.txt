@@ -6,7 +6,7 @@ Tags: map, leafletjs, location, geotag
 Requires at least: 4.9.5
 Tested up to: 4.9.5
 Requires PHP: 7.2.20
-Stable tag: 0.3.7
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ See [WordPress Usage](README.md#wordpress-usage).
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.4.0 =
+* Merge to master branch
 
 = 0.3.7 =
 * Optimise breakpoints
