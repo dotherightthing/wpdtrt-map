@@ -45,6 +45,12 @@ In a PHP template, as a template tag:
 2. `enlargement_link_text="View Larger Map"` (default) - optionally display a link to the map at the bottom of the embed
 3. `zoom_level="4"` (default) - zooms into the map
 
+### Styling
+
+Core CSS properties may be overwritten by changing the variable values in your theme stylesheet.
+
+See `scss/_variables.scss`.
+
 ## Dependencies
 
 1. The geocoded map location is selected using the free version of [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
