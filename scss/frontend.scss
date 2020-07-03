@@ -9,7 +9,7 @@
 
 @import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/variables';
 @import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/extends';
-@import 'variables';
+@import 'variables/scss';
 @import 'extends';
 
 // -------------------------------------------------------------------
@@ -28,8 +28,8 @@
     // Custom Legend
 
     .wpdtrt-map-legend {
-        background: $wpdtrt-map-legend-bg-color;
-        color: $wpdtrt-map-legend-text-color;
+        background: var(--wpdtrt-map-legend-bg-color);
+        color: var(--wpdtrt-map-legend-text-color);
         line-height: initial;
         padding: 5px;
         border: 1px solid;
@@ -63,7 +63,7 @@
 
         .leaflet-control-layers,
         .leaflet-bar {
-            border-color: $wpdtrt-map-leaflet-bar-border-color;
+            border-color: var(--wpdtrt-map-leaflet-bar-border-color);
             border-width: 1px;
             border-radius: 3px;
         }
@@ -73,7 +73,7 @@
 
     &.leaflet-container {
         .leaflet-control-attribution {
-            background-color: $wpdtrt-map-leaflet-attribution-bg-color;
+            background-color: var(--wpdtrt-map-leaflet-attribution-bg-color);
             font-size: 12px;
 
             a {
@@ -93,8 +93,8 @@
         display: block;
         height: 20px;
         vertical-align: middle;
-        background-color: $wpdtrt-map-link-bg-color;
-        color: $wpdtrt-map-link-text-color;
+        background-color: var(--wpdtrt-map-link-bg-color);
+        color: var(--wpdtrt-map-link-text-color);
         line-height: 20px;
         font-weight: normal;
         font-style: normal;

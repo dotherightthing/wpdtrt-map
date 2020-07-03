@@ -1,0 +1,21 @@
+//
+// File: scss/variables/_css.scss
+//
+// Since:
+//   0.9.x - DTRT WordPress Plugin Boilerplate Generator
+//
+// Colours are specified in hsla values:
+// - Hue: 0 - 360 on a colour wheel (e.g. http://hslpicker.com/)
+// - Saturation: 0 (grayscale) - 100 (full colour)
+// - Lightness: 0% (black), 50% (average), 100% (completely light)
+// - Alpha
+//
+
+:root {
+    --wpdtrt-map-legend-bg-color: hsla(0, 0%, 100%, 1);
+    --wpdtrt-map-legend-text-color: hsla(0, 0%, 0%, 1);
+    --wpdtrt-map-leaflet-bar-border-color: hsla(0, 0%, 0%, .4);
+    --wpdtrt-map-leaflet-attribution-bg-color: hsla(0, 0%, 100%, .5);
+    --wpdtrt-map-link-bg-color: hsla(0, 0%, 0%, .7);
+    --wpdtrt-map-link-text-color: hsla(0, 0%, 100%, 1);
+}
