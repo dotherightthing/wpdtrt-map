@@ -173,7 +173,7 @@ register_activation_hook( dirname( __FILE__ ), 'wpdtrt_map_activate' );
 add_action( 'init', 'wpdtrt_map_plugin_init', 0 );
 add_action( 'init', 'wpdtrt_map_shortcode_init', 100 );
 add_action( 'init', 'wpdtrt_map_taxonomy_init', 100 );
-add_action( 'widgets_init', 'wpdtrt_map_widget_init', 10 );
+// add_action( 'widgets_init', 'wpdtrt_map_widget_init', 10 ); // see dotherightthing/wpdtrt-plugin-boilerplate#183.
 
 register_deactivation_hook( dirname( __FILE__ ), 'wpdtrt_map_deactivate' );
 
