@@ -6,7 +6,7 @@ Tags: map, leafletjs, location, geotag
 Requires at least: 5.3.3
 Tested up to: 5.3.3
 Requires PHP: 7.2.15
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,13 @@ See [WordPress Usage](README.md#wordpress-usage).
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.4.2 =
+* Use CSS variables, compile CSS variables to separate file
+* Update wpdtrt-npm-scripts to fix release
+* Update wpdtrt-plugin-boilerplate to 1.7.5 to support CSS variables
+* Disable widget (dotherightthing/wpdtrt-plugin-boilerplate#183)
+* Fix "Parameter must be an array or an object that implements Countable"
 
 = 0.4.1 =
 * Docs

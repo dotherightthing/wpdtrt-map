@@ -1,2 +1,7 @@
-* [dbe7e81] Docs
-* [69d0d53] Update required WP and PHP versions
+* [12f914c] Update wpdtrt-plugin-boilerplate to 1.7.5 to fix CSS output order
+* [e93864c] Disable widget (dotherightthing/wpdtrt-plugin-boilerplate#183)
+* [7ba0922] Update wpdtrt-plugin-boilerplate from 1.7.0 to 1.7.3 to fix import of CSS variables file
+* [662a614] Fix "Parameter must be an array or an object that implements Countable"
+* [313178f] Update wpdtrt-npm-scripts to fix release
+* [94aebbe] Update wpdtrt-npm-scripts to fix release
+* [3cd3f63] Use CSS variables, compile CSS variables to separate file
