@@ -10,7 +10,8 @@ release*
 .browserslistrc
 .eslintrc
 .stylelint*
-js/*-es5.js
+js/backend*.js
+js/frontend*.js
 nodemon.json
 phpcs.xml
 phpunit.xml.dist
