@@ -174,6 +174,25 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 	}
 
 	/**
+	 * Function: get_acf_google_map_api_key
+	 *
+	 * Get the API key to use with the ACF renderer.
+	 *
+	 * Returns:
+	 *   (string) $key - ACF Google Map API key
+	 */
+	public function get_acf_google_map_api_key() {
+		$api_key            = '';
+		$plugin_options     = $this->get_plugin_options();
+
+		if ( array_key_exists( 'value', $plugin_options['google_javascript_maps_api_key'] ) ) {
+			$api_key = $plugin_options['google_javascript_maps_api_key']['value'];
+		}
+
+		return $api_key;
+	}
+
+	/**
 	 * Function: set_acf_google_map_api_key
 	 *
 	 * Register API key with ACF renderer.
@@ -185,7 +204,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 	 *   (object) $api - ACF Google Map API field object.
 	 *
 	 * See:
-	 *   <https://www.advancedcustomfields.com/resources/google-map/>
+	 *   <https://www.advancedcustomfields.com/resources/acf-fields-google_map-api/>
 	 *
 	 * Example:
 	 * --- PHP
@@ -193,15 +212,8 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 	 * ---
 	 */
 	public function set_acf_google_map_api_key( $api ) {
-
-		$key            = '';
-		$plugin_options = $this->get_plugin_options();
-
-		if ( array_key_exists( 'value', $plugin_options['google_javascript_maps_api_key'] ) ) {
-			$key = $plugin_options['google_javascript_maps_api_key']['value'];
-		}
-
-		$api['key'] = $key;
+		$api_key = $this->get_acf_google_map_api_key();
+		$api['key'] = $api_key;
 
 		return $api;
 	}
@@ -216,6 +228,11 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 	 * Note: ACF admin menu is toggled on/off in wpdtrt/library/acf.php.
 	 */
 	public function set_acf_field_groups() {
+		// For ACF Pro
+		// see https://highrise.digital/blog/acf-and-the-google-maps-api-error/
+		// unsure if this is required in latest ACF Pro
+		// $api_key = $this->get_acf_google_map_api_key();
+		// acf_update_setting('google_api_key', $api_key);
 
 		if ( function_exists( 'acf_add_local_field_group' ) ) :
 			acf_add_local_field_group(array(
