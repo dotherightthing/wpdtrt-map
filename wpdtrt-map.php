@@ -256,7 +256,7 @@ function wpdtrt_map_plugin_init() {
 			'type'  => 'password',
 			'label' => __( 'Google Cloud Platform API key', 'wpdtrt-map' ),
 			'size'  => 50,
-			'tip'   => __( 'https://console.cloud.google.com/apis/credentials, https://console.cloud.google.com/apis/library (Maps JavaScript API, Geocoding API and Places API', 'wpdtrt-map' ),
+			'tip'   => __( 'https://console.cloud.google.com/apis/credentials, https://console.cloud.google.com/apis/library (Maps JavaScript API, Geocoding API and Places API)', 'wpdtrt-map' ),
 		),
 		// Mapbox is used to render the map embed.
 		'mapbox_api_token'               => array(
