@@ -2,7 +2,7 @@
 === DTRT Map ===
 Contributors: dotherightthingnz
 Donate link: http://dotherightthing.co.nz
-Tags: map, leafletjs, location, geotag
+Tags: map, mapbox, location, geotag
 Requires at least: 5.3.3
 Tested up to: 5.3.3
 Requires PHP: 7.2.15

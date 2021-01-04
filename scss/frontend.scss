@@ -23,10 +23,11 @@
 }
 
 .wpdtrt-map-embed {
-    height: 500px;
+    .js & {
+        height: 300px;
+    }
 
     // Custom Legend
-
     .wpdtrt-map-legend {
         background: var(--wpdtrt-map-legend-bg-color);
         color: var(--wpdtrt-map-legend-text-color);
@@ -34,53 +35,6 @@
         padding: 5px;
         border: 1px solid;
         margin: 0;
-    }
-
-    // Zoom controls
-
-    // add space below the control for the map link
-    // @see https://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
-    .leaflet-bottom {
-        &.leaflet-left {
-            .leaflet-control-zoom {
-                /* stylelint-disable-next-line declaration-no-important */
-                bottom: 30px !important; // an extra 10px allows for the missing .mapbox-logo.leaflet-control
-            }
-        }
-    }
-
-    // allow for leaflet incorrectly applying touch styling in MacOS Chrome
-    &.leaflet-touch {
-
-        .leaflet-bar {
-            a {
-                width: 26px; // match Godaddy
-                height: 26px; // match Godaddy
-                font-size: 16px; // match Godaddy which uses mapbox icons instead
-                line-height: 23px; // vertically center
-            }
-        }
-
-        .leaflet-control-layers,
-        .leaflet-bar {
-            border-color: var(--wpdtrt-map-leaflet-bar-border-color);
-            border-width: 1px;
-            border-radius: 3px;
-        }
-    }
-
-    // Attributions
-
-    &.leaflet-container {
-        .leaflet-control-attribution {
-            background-color: var(--wpdtrt-map-leaflet-attribution-bg-color);
-            font-size: 12px;
-
-            a {
-                color: inherit;
-                text-decoration: underline;
-            }
-        }
     }
 }
 

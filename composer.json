@@ -2,7 +2,7 @@
     "name": "dotherightthing/wpdtrt-map",
     "description": "Embed an interactive map.",
     "type": "library",
-    "keywords": ["map", "leafletjs", "location", "geotag"],
+    "keywords": ["map", "mapbox", "location", "geotag"],
     "license": "ISC",
     "authors": [
         {
