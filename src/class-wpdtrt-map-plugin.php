@@ -95,7 +95,7 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 		// get geotag from image.
 		$featured_image_latlng = $this->get_featured_image_latlng( $post );
 
-		if ( isset( $acf_latlng ) && is_array( $acf_latlng ) && ( 3 === count( $acf_latlng ) ) ) {
+		if ( isset( $acf_latlng ) && is_array( $acf_latlng ) && ( count( $acf_latlng ) >= 3 ) ) {
 			// use ACF map if a location was set using this.
 			$acf_map = $acf_latlng;
 		} elseif ( 2 === count( $featured_image_latlng ) ) {
