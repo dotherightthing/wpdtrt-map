@@ -47,6 +47,10 @@ $plugin_options = $plugin->get_plugin_options();
  * - <https://www.advancedcustomfields.com/resources/google-map/>
  */
 $acf_map = $plugin->get_acf_map();
+$mapbox_api_token        = '';
+$mapbox_account_username = '';
+$mapbox_style_id         = '';
+$mapbox_marker_colour    = '';
 
 if ( $acf_map ) {
 	// TODO: address is currently just a placeholder.
@@ -55,9 +59,20 @@ if ( $acf_map ) {
 	$static_coordinates = $acf_map['lng'] . ',' . $acf_map['lat'];
 }
 
-// https://www.mapbox.com/studio/account/tokens/.
 if ( array_key_exists( 'value', $plugin_options['mapbox_api_token'] ) ) {
 	$mapbox_api_token = $plugin_options['mapbox_api_token']['value'];
+}
+
+if ( array_key_exists( 'value', $plugin_options['mapbox_account_username'] ) ) {
+	$mapbox_account_username = $plugin_options['mapbox_account_username']['value'];
+}
+
+if ( array_key_exists( 'value', $plugin_options['mapbox_style_id'] ) ) {
+	$mapbox_style_id = $plugin_options['mapbox_style_id']['value'];
+}
+
+if ( array_key_exists( 'value', $plugin_options['mapbox_marker_colour'] ) ) {
+	$mapbox_marker_colour = $plugin_options['mapbox_marker_colour']['value'];
 }
 
 // load the data
@@ -76,7 +91,7 @@ echo $before_title . $title . $after_title;
 			<noscript>
 				<img
 					alt="Map showing the co-ordinates <?php echo $static_coordinates; ?>. "
-					src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/<?php echo $static_coordinates; ?>,<?php echo $zoom_level; ?>,0,0/300x300@2x?access_token=<?php echo $mapbox_api_token; ?>"
+					src="https://api.mapbox.com/styles/v1/<?php echo $mapbox_account_username; ?>/<?php echo $mapbox_style_id; ?>/static/<?php echo $static_coordinates; ?>,<?php echo $zoom_level; ?>,0,0/300x300@2x?access_token=<?php echo $mapbox_api_token; ?>"
 				>
 			</noscript>
 		</div>
@@ -86,37 +101,27 @@ echo $before_title . $title . $after_title;
 		</p>
 		<?php endif; ?>
 	</div>
-	<script>
-		var wpdtrt_map_<?php echo $unique_id; ?> = L.map('wpdtrt-map-<?php echo $unique_id; ?>', {
-			zoomControl: false
-		})
-		.setView([<?php echo $coordinates; ?>], 16)
-		.setZoom([<?php echo $zoom_level; ?>]);
+	<script>		
+		// Remove noscript fallback as mapbox expects an empty container
+		document.getElementById('wpdtrt-map-<?php echo $unique_id; ?>').innerHTML = '';
 
-		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			// maxZoom: 18,
-			id: 'mapbox.streets',
-			accessToken: '<?php echo $mapbox_api_token; ?>'
-		}).addTo(wpdtrt_map_<?php echo $unique_id; ?>);
+		// Embed JS map
+		// TODO: add legend, e.g. wpdtrt-gallery-location value
+		mapboxgl.accessToken = '<?php echo $mapbox_api_token; ?>';
+		var map = new mapboxgl.Map({
+			container: 'wpdtrt-map-<?php echo $unique_id; ?>',
+			style: 'mapbox://styles/<?php echo $mapbox_account_username; ?>/<?php echo $mapbox_style_id; ?>', // stylesheet location
+			center: [<?php echo $static_coordinates; ?>], // starting position [lng, lat]
+			zoom: <?php echo $zoom_level; ?> // starting zoom
+		});
 
-		var marker = L.marker([<?php echo $coordinates; ?>]).addTo(wpdtrt_map_<?php echo $unique_id; ?>);
+		var marker = new mapboxgl.Marker({
+				color: '<?php echo $mapbox_marker_colour; ?>',
+			})
+			.setLngLat([<?php echo $static_coordinates; ?>])
+			.addTo(map);
 
-		// http://leafletjs.com/examples/choropleth/
-		// TODO: use wpdtrt-gallery-location value here, or suppress.
-		/*
-		var legend = L.control({ position: 'topleft' });
-		legend.onAdd = function (map) {
-			// tagname:div, classname:info legend
-			var div = L.DomUtil.create('div', 'wpdtrt-map-legend'); // .wpdtrt-map-legend
-				div.innerHTML = '<?php echo $address; ?>';
-			return div;
-		};
-		legend.addTo(wpdtrt_map_<?php echo $unique_id; ?>);
-		*/
-
-		// https://www.mapbox.com/mapbox.js/example/v1.0.0/change-zoom-control-location/.
-		new L.Control.Zoom({ position: 'bottomleft' }).addTo(wpdtrt_map_<?php echo $unique_id; ?>);
+		map.addControl(new mapboxgl.FullscreenControl());
 	</script>
 <?php endif; ?>
 

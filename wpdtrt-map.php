@@ -251,7 +251,7 @@ function wpdtrt_map_plugin_init() {
 	 */
 	$plugin_options = array(
 		// Google Maps is used to render the ACF location picker.
-		// See https://www.advancedcustomfields.com/resources/google-map/.
+		// See https://www.advancedcustomfields.com/resources/acf-fields-google_map-api/.
 		'google_javascript_maps_api_key' => array(
 			'type'  => 'password',
 			'label' => __( 'Google Cloud Platform API key', 'wpdtrt-map' ),
@@ -263,7 +263,25 @@ function wpdtrt_map_plugin_init() {
 			'type'  => 'password',
 			'label' => __( 'Mapbox API Token', 'wpdtrt-map' ),
 			'size'  => 120,
-			'tip'   => __( 'https://www.mapbox.com/studio/account/tokens/', 'wpdtrt-map' ),
+			'tip'   => __( 'https://account.mapbox.com/access-tokens', 'wpdtrt-map' ),
+		),
+		'mapbox_account_username'        => array(
+			'type'  => 'password',
+			'label' => __( 'Mapbox account username', 'wpdtrt-map' ),
+			'size'  => 120,
+			'tip'   => __( 'https://account.mapbox.com/', 'wpdtrt-map' ),
+		),
+		'mapbox_style_id'                => array(
+			'type'  => 'password',
+			'label' => __( 'Mapbox Style ID', 'wpdtrt-map' ),
+			'size'  => 50,
+			'tip'   => __( 'https://studio.mapbox.com/', 'wpdtrt-map' ),
+		),
+		'mapbox_marker_colour'           => array(
+			'type'  => 'text',
+			'label' => __( 'Mapbox Marker colour', 'wpdtrt-map' ),
+			'size'  => 7,
+			'tip'   => __( 'Use hex format', 'wpdtrt-map' ),
 		),
 	);
 

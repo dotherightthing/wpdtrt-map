@@ -317,13 +317,11 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 			return;
 		}
 
-		// "Include Leaflet CSS file in the head section of your document:"
+		// "Include the JavaScript and CSS files in the <head> of your HTML file. "
 		$style  = '';
 		$style .= '<link';
 		$style .= ' rel="stylesheet"'; // phpcs:ignore
-		$style .= ' href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"';
-		$style .= ' integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="';
-		$style .= ' crossorigin=""';
+		$style .= ' href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"';
 		$style .= ' />';
 
 		echo $style;
@@ -353,17 +351,15 @@ class WPDTRT_Map_Plugin extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_7_
 		}
 
 		if ( isset( $mapbox_api_token ) && ( '' !== $mapbox_api_token ) ) {
-			// "Include Leaflet JavaScript file after Leaflet’s CSS".
+			// "Include the JavaScript and CSS files in the <head> of your HTML file."
 			// Note: actual embed code is in shortcode template content-map.php.
 			$script .= '<script';
-			$script .= ' src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"';
-			$script .= ' integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="';
-			$script .= ' crossorigin=""';
-			$script .= ' id="wpdtrt-map"';
+			$script .= ' src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"';
+			$script .= ' id="wpdtrt-map-js"';
 			$script .= '>';
 			$script .= '</script>';
 		} else {
-			$script .= '<script id="wpdtrt-map">';
+			$script .= '<script id="wpdtrt-map-js">';
 			$script .= 'console.warn( "wpdtrt-map: ' . $mapbox_api_token_warning . '" );';
 			$script .= '</script>';
 		}
