@@ -7,15 +7,31 @@
 //   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 //
 
-@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/variables';
-@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/extends';
+// -------------------------------------------------------------------
+// Variables
+// -------------------------------------------------------------------
+
+@import '../node_modules/wpdtrt-scss/scss/variables/scss';
 @import 'variables/scss';
-@import 'extends';
+
+// -------------------------------------------------------------------
+// Mixins
+// -------------------------------------------------------------------
+
+@import '../node_modules/wpdtrt-scss/scss/mixins';
+
+// -------------------------------------------------------------------
+// Extends
+// -------------------------------------------------------------------
+
+@import '../node_modules/wpdtrt-scss/scss/extends';
 
 // -------------------------------------------------------------------
 // Styles
 // Note: Replicating Godaddy Website Builder implementation for Hands Of Light
 // -------------------------------------------------------------------
+
+@import '../node_modules/wpdtrt-scss/scss/_frontend';
 
 .wpdtrt-map {
     position: relative; // AP for link

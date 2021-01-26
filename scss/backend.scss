@@ -7,14 +7,28 @@
 //   0.8.13 - DTRT WordPress Plugin Boilerplate Generator
 //
 
-@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/variables';
-@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/extends';
-@import 'vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/backend';
-@import 'variables/scss';
-@import 'extends';
+// -------------------------------------------------------------------
+// Variables
+// -------------------------------------------------------------------
 
-// duplicate frontend styles for settings page demo
-@import 'frontend';
+@import '../node_modules/wpdtrt-scss/scss/variables/scss';
+@import 'variables/scss';
+
+// -------------------------------------------------------------------
+// Mixins
+// -------------------------------------------------------------------
+
+@import '../node_modules/wpdtrt-scss/scss/mixins';
+
+// -------------------------------------------------------------------
+// Extends
+// -------------------------------------------------------------------
+
+@import '../node_modules/wpdtrt-scss/scss/extends';
+
+// -------------------------------------------------------------------
+// Styles
+// -------------------------------------------------------------------
 
 .wpdtrt-maps-tip {
     display: block;

@@ -46,7 +46,9 @@
   "license": "ISC",
   "homepage": "https://github.com/dotherightthing/wpdtrt-map",
   "srcDir": "/Volumes/DanBackup/Websites/wpdtrt-map",
-  "dependencies": {},
+  "dependencies": {
+    "wpdtrt-scss": "github:dotherightthing/wpdtrt-scss#semver:*"
+  },
   "devDependencies": {
     "wpdtrt-npm-scripts": "github:dotherightthing/wpdtrt-npm-scripts#semver:0.3.*"
   }
