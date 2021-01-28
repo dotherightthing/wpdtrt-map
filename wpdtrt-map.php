@@ -323,8 +323,8 @@ function wpdtrt_map_plugin_init() {
 	 */
 	$ui_messages = array(
 		'demo_data_description'       => __( 'This demo was generated from the following data', 'wpdtrt-map' ),
-		'demo_data_displayed_length'  => __( 'results displayed', 'wpdtrt-map' ),
-		'demo_data_length'            => __( 'results', 'wpdtrt-map' ),
+		'demo_data_displayed_length'  => __( '# results displayed', 'wpdtrt-map' ),
+		'demo_data_length'            => __( '# results', 'wpdtrt-map' ),
 		'demo_data_title'             => __( 'Demo data', 'wpdtrt-map' ),
 		'demo_date_last_updated'      => __( 'Data last updated', 'wpdtrt-map' ),
 		'demo_sample_title'           => __( 'Demo sample', 'wpdtrt-map' ),
