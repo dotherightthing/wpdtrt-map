@@ -144,9 +144,7 @@ if ( is_admin() ) {
 // sub classes, not loaded via PSR-4.
 // remove the includes you don't need, edit the files you do need.
 require_once WPDTRT_MAP_PATH . 'src/class-wpdtrt-map-plugin.php';
-require_once WPDTRT_MAP_PATH . 'src/class-wpdtrt-map-rewrite.php';
 require_once WPDTRT_MAP_PATH . 'src/class-wpdtrt-map-shortcode.php';
-require_once WPDTRT_MAP_PATH . 'src/class-wpdtrt-map-taxonomy.php';
 require_once WPDTRT_MAP_PATH . 'src/class-wpdtrt-map-widget.php';
 
 // log & trace helpers.
@@ -172,7 +170,6 @@ register_activation_hook( dirname( __FILE__ ), 'wpdtrt_map_activate' );
 
 add_action( 'init', 'wpdtrt_map_plugin_init', 0 );
 add_action( 'init', 'wpdtrt_map_shortcode_init', 100 );
-add_action( 'init', 'wpdtrt_map_taxonomy_init', 100 );
 // add_action( 'widgets_init', 'wpdtrt_map_widget_init', 10 ); // see dotherightthing/wpdtrt-plugin-boilerplate#183.
 register_deactivation_hook( dirname( __FILE__ ), 'wpdtrt_map_deactivate' );
 
@@ -383,17 +380,6 @@ function wpdtrt_map_plugin_init() {
 }
 
 /**
- * Group: Rewrite config
- */
-
-/**
- * Function: wpdtrt_map_rewrite_init
- *
- * Register Rewrite.
- */
-function wpdtrt_map_rewrite_init() {}
-
-/**
  * Group: Shortcode config
  */
 
@@ -419,20 +405,6 @@ function wpdtrt_map_shortcode_init() {
 		)
 	);
 }
-
-/**
- * Group: Taxonomy config
- */
-
-/**
- * Function: wpdtrt_map_taxonomy_init
- *
- * Register Taxonomy.
- *
- * Returns:
- *   object - Taxonomy/
- */
-function wpdtrt_map_taxonomy_init() {}
 
 /**
  * Group: Widget config
