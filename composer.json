@@ -30,7 +30,7 @@
         "dotherightthing/wpdtrt-exif": "^0.2.2",
         "wpackagist-plugin/advanced-custom-fields": "5.6.*",
         "prairiewest/phpconvertdmstodecimal": "dev-master"
-      },
+    },
     "extra": {
         "require-wp": [
             {
