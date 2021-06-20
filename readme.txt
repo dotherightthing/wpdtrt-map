@@ -6,7 +6,7 @@ Tags: map, mapbox, location, geotag
 Requires at least: 5.3.3
 Tested up to: 5.3.3
 Requires PHP: 7.2.15
-Stable tag: 0.4.7
+Stable tag: 0.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,11 @@ See [WordPress Usage](README.md#wordpress-usage).
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.4.8 =
+* [f9de48f] Update wpdtrt-scss to 0.1.17
+* [33c1d83] Update wpdtrt-scss to 0.1.14
+* [76732c7] Update wpdtrt-scss to 0.1.13
 
 = 0.4.7 =
 * [22ce91a] Update dependencies, update wpdtrt-plugin-boilerplate from 1.7.16 to 1.7.17

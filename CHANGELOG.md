@@ -1,1 +1,3 @@
-* [22ce91a] Update dependencies, update wpdtrt-plugin-boilerplate from 1.7.16 to 1.7.17
+* [f9de48f] Update wpdtrt-scss to 0.1.17
+* [33c1d83] Update wpdtrt-scss to 0.1.14
+* [76732c7] Update wpdtrt-scss to 0.1.13
