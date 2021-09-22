@@ -165,15 +165,15 @@ echo $before_title . $title . $after_title;
 				'layout': {
 					'text-field': [
 						'format',
-						['get', 'name'], // feature.name
+						['upcase', ['get', 'name']], // feature.name
 						{ 'font-scale': 1 },
 						'\n',
 						{},
-						['upcase', ['get', 'description']], // feature.description
-						{ 'font-scale': 0.75 }
+						['get', 'description'], // feature.description
+						{ 'font-scale': 0.8 }
 					],
 					// allow high priority labels to shift between the listed positions to stay on the map
-					'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+					'text-variable-anchor': ['top'],
 					// set the distance of the text from its text-variable-anchor
 					'text-radial-offset': 0.5,
 					// set the justification of the label (`auto` = anchor position)
@@ -182,7 +182,7 @@ echo $before_title . $title . $after_title;
 				paint: {
 					'text-color': '#000000',
 					'text-halo-color': '#ffffff',
-					'text-halo-width': 2
+					'text-halo-width': 1.25
 				}
 			});
 
