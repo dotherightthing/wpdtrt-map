@@ -75,6 +75,18 @@ if ( array_key_exists( 'value', $plugin_options['mapbox_marker_colour'] ) ) {
 	$mapbox_marker_colour = $plugin_options['mapbox_marker_colour']['value'];
 }
 
+$daynumber    = '';
+$map_location = '';
+
+// Check for ACF function & tour diary page.
+if ( ( function_exists( 'get_field' ) ) && ( wpdtrt_dbth_post_type_is( 'tourdiaries' ) ) ) {
+	$map_location = get_field( 'acf_location' );
+
+	if ( shortcode_exists( 'wpdtrt_tourdates_shortcode_daynumber' ) ) {
+		$daynumber = trim( do_shortcode( '[wpdtrt_tourdates_shortcode_daynumber]' ) );
+	}
+}
+
 // load the data
 // $plugin->get_api_data();
 // $foo = $plugin->get_api_data_bar();
@@ -106,7 +118,6 @@ echo $before_title . $title . $after_title;
 		document.getElementById('wpdtrt-map-<?php echo $unique_id; ?>').innerHTML = '';
 
 		// Embed JS map
-		// TODO: add legend, e.g. wpdtrt-gallery-location value
 		mapboxgl.accessToken = '<?php echo $mapbox_api_token; ?>';
 		var map = new mapboxgl.Map({
 			container: 'wpdtrt-map-<?php echo $unique_id; ?>',
@@ -115,13 +126,68 @@ echo $before_title . $title . $after_title;
 			zoom: <?php echo $zoom_level; ?> // starting zoom
 		});
 
+		// https://geojson.org/
+		var places = {
+			'type': 'FeatureCollection',
+			'features': [
+				{
+					'type': 'Feature',
+					'properties': {
+						'name': 'Day #<?php echo $daynumber; ?>',
+						'description': '<?php echo $map_location; ?>'
+					},
+					'geometry': {
+						'type': 'Point',
+						'coordinates': [<?php echo $static_coordinates; ?>], // [lng, lat]
+					}
+				}
+			]
+		};
+
 		var marker = new mapboxgl.Marker({
 				color: '<?php echo $mapbox_marker_colour; ?>',
 			})
 			.setLngLat([<?php echo $static_coordinates; ?>])
 			.addTo(map);
 
-		map.addControl(new mapboxgl.FullscreenControl());
+		// see https://docs.mapbox.com/mapbox-gl-js/example/variable-label-placement/.
+		map.on('load', () => {
+			// Add a GeoJSON source containing place coordinates and information.
+			map.addSource('places', {
+				'type': 'geojson',
+				'data': places
+			});
+
+			map.addLayer({
+				'id': 'poi-labels',
+				'type': 'symbol',
+				'source': 'places',
+				'layout': {
+					'text-field': [
+						'format',
+						['get', 'name'], // feature.name
+						{ 'font-scale': 1 },
+						'\n',
+						{},
+						['upcase', ['get', 'description']], // feature.description
+						{ 'font-scale': 0.75 }
+					],
+					// allow high priority labels to shift between the listed positions to stay on the map
+					'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+					// set the distance of the text from its text-variable-anchor
+					'text-radial-offset': 0.5,
+					// set the justification of the label (`auto` = anchor position)
+					'text-justify': 'auto'
+				},
+				paint: {
+					'text-color': '#000000',
+					'text-halo-color': '#ffffff',
+					'text-halo-width': 2
+				}
+			});
+
+			map.addControl(new mapboxgl.FullscreenControl());
+		});
 	</script>
 <?php endif; ?>
 
