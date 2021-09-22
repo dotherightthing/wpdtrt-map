@@ -6,7 +6,7 @@ Tags: map, mapbox, location, geotag
 Requires at least: 5.3.3
 Tested up to: 5.3.3
 Requires PHP: 7.2.15
-Stable tag: 0.4.9
+Stable tag: 0.4.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,11 @@ See [WordPress Usage](README.md#wordpress-usage).
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 0.4.10 =
+* [b3d0b6c] Adjust text size and fix its position
+* [af28d16] Add day and location to map marker (#18)
+* [5e906a8] Lint PHP
 
 = 0.4.9 =
 * [86062f8] Don't load generic wpdtrt-scss styles in plugins (dotherightthing/wpdtrt-scss#1)
