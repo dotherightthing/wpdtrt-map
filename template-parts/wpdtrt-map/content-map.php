@@ -46,7 +46,7 @@ $plugin_options = $plugin->get_plugin_options();
  * - <https://stackoverflow.com/questions/27186167/set-view-for-an-array-of-addressesno-coordinates-using-leaflet-js>
  * - <https://www.advancedcustomfields.com/resources/google-map/>
  */
-$acf_map = $plugin->get_acf_map();
+$acf_map                 = $plugin->get_acf_map();
 $mapbox_api_token        = '';
 $mapbox_account_username = '';
 $mapbox_style_id         = '';
