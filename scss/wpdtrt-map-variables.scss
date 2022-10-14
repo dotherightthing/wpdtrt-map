@@ -5,4 +5,9 @@
 // @package     wpdtrt_map
 // @since       0.4.2
 
-@import 'variables/css';
+// -------------------------------------------------------------------
+// Imports
+// -------------------------------------------------------------------
+
+// Import local variables
+@use 'variables/css' as *;
