@@ -1,5 +1,5 @@
 /**
- * @file cypress/integration/flows/wpdtrt-map.js
+ * @file cypress/e2e/flows/wpdtrt-map.js
  * @summary Dummy Cypress spec for UI testing. Edit to suit your needs.
  * @since 0.8.13
  * @see Testing & Debugging - https://github.com/dotherightthing/wpdtrt-plugin-boilerplate/wiki/Testing-&-Debugging
